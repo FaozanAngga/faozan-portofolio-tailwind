@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+
+    <link href="./dist/css/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+    <!-- Wrapper Utama Layout -->
+    <div class="md:flex min-h-screen">
+
+        <!-- ================= NAVBAR MOBILE ================= -->
+        <div
+            class="md:hidden bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 px-5 py-3 flex justify-between items-center sticky top-0 z-50 h-16">
+
+            <!-- Logo / Name Brand -->
+            <a href="#about" class="flex items-center gap-2.5 group">
+                <!-- Mini Monogram Badge -->
+                <div
+                    class="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center font-bold text-sm text-indigo-400 group-hover:scale-105 transition">
+                    F
+                </div>
+
+                <!-- Nama & Status Dot -->
+                <div class="flex flex-col justify-center">
+                    <h1 class="text-base font-extrabold text-white tracking-tight leading-none">
+                        Faozan Anggarian
+                    </h1>
+                    <!-- Teks Profesi Mobile dengan Animasi Mengetik -->
+                    <p class="text-[11px] text-slate-400 font-medium tracking-wide mt-1 h-3.5 flex items-center">
+                        <span id="typing-role-mobile" class="border-r-2 border-indigo-400 pr-0.5 animate-pulse"></span>
+                    </p>
+                </div>
+            </a>
+
+            <!-- Tombol Toggle Mobile Menu -->
+            <button id="menu-btn" aria-label="Toggle Menu"
+                class="p-2 text-slate-400 hover:text-white bg-slate-900/60 hover:bg-slate-800 border border-slate-800 rounded-xl transition duration-200 focus:outline-none">
+                <svg id="burger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+                <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Wrapper Utama Layout Flex -->
+        <div class="md:flex min-h-screen">
+
+            <!-- 2. NAVBAR VERTIKAL / SIDEBAR (Perbaikan Tinggi di Mobile) -->
+            <!--Perubahan di Mobile:
+                - h-auto: Tinggi mengikuti jumlah menu, tidak memaksa 100vh.
+                - pt-4 pb-6: Padding atas-bawah yang lebih tipis di HP agar tidak "terlalu besar".
+                - top-16: Mengimbangi tinggi top bar mobile (h-16).
+            -->
+
+            <!-- ================= NAVBAR VERTIKAL / SIDEBAR ELEGAN ================= -->
+            <header id="sidebar"
+                class="hidden md:flex flex-col w-full md:w-64 bg-slate-900/60 backdrop-blur-2xl border-b md:border-b-0 md:border-r border-slate-800/80 p-6 justify-between fixed top-16 md:top-0 h-auto md:h-screen z-40 transition-all duration-300">
+
+                <div>
+                    <!-- 1. BRAND & LOGO PROFIL -->
+                    <div class="mb-10 hidden md:flex items-center gap-3.5 pb-6 border-b border-slate-800/80">
+                        <!-- Monogram Logo dengan Gradient Glow -->
+                        <div class="relative group">
+                            <div
+                                class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-300">
+                            </div>
+                            <div
+                                class="relative w-10 h-10 rounded-xl bg-slate-950 flex items-center justify-center font-black text-lg text-white border border-slate-800">
+                                F
+                            </div>
+                        </div>
+
+                        <!-- Teks Nama & Profesi -->
+                        <div>
+                            <h1 class="text-base font-bold text-white tracking-tight leading-none">
+                                Faozan Anggarian
+                            </h1>
+                            <!-- Teks Profesi dengan Animasi Mengetik -->
+                            <p class="text-[12px] text-slate-400 font-medium tracking-wide mt-1 h-4 flex items-center">
+                                <span id="typing-role" class="border-r-2 border-indigo-400 pr-0.5 animate-pulse"></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2. MENU NAVIGASI DENGAN ACTIVE INDICATOR -->
+                    <nav class="flex flex-col space-y-1.5">
+
+                        <!-- Link: About -->
+                        <a href="#about"
+                            class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/40 border border-transparent hover:border-slate-700/40 transition-all duration-200 font-medium text-sm overflow-hidden">
+                            <!-- Indikator Garis Menyala saat Hover/Aktif -->
+                            <span
+                                class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
+
+                            <span class="ml-1">About me</span>
+                        </a>
+
+                        <!-- Link: Experience -->
+                        <a href="#experience"
+                            class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/40 border border-transparent hover:border-slate-700/40 transition-all duration-200 font-medium text-sm overflow-hidden">
+                            <span
+                                class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
+
+                            <span class="ml-1">Experience</span>
+                        </a>
+
+                        <!-- Link: Services -->
+                        <a href="#skill"
+                            class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/40 border border-transparent hover:border-slate-700/40 transition-all duration-200 font-medium text-sm overflow-hidden">
+                            <span
+                                class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
+
+                            <span class="ml-1">Skills</span>
+                        </a>
+
+                        <!-- Link: Projects -->
+                        <a href="#project"
+                            class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/40 border border-transparent hover:border-slate-700/40 transition-all duration-200 font-medium text-sm overflow-hidden">
+                            <span
+                                class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
+
+                            <span class="ml-1">Projects</span>
+                        </a>
+
+                        <!-- Link: Contact Me -->
+                        <a href="#contact"
+                            class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/40 border border-transparent hover:border-slate-700/40 transition-all duration-200 font-medium text-sm overflow-hidden">
+                            <span
+                                class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
+
+                            <span class="ml-1">Contact me</span>
+                        </a>
+
+                    </nav>
+                </div>
+
+                <!-- 3. FOOTER SIDEBAR (Status Lokasi + Sosial Media) -->
+                <div class="pt-6 border-t border-slate-800/80 hidden md:flex flex-col gap-4">
+                    <!-- Status Lokasi Ringkas -->
+                    <div class="flex items-center gap-2 text-xs text-slate-400">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span>Indonesia (GMT+7)</span>
+                    </div>
+
+                    <!-- Ikon Sosial Media -->
+                    <div class="flex items-center justify-between">
+                        <p class="text-[11px] text-slate-500">&copy; 2026 Faozan Anggarian</p>
+
+                        <div class="flex space-x-1 text-slate-400">
+                            <a href="#" class="p-1.5 rounded-lg hover:bg-slate-800 hover:text-indigo-400 transition"
+                                title="GitHub">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="p-1.5 rounded-lg hover:bg-slate-800 hover:text-indigo-400 transition"
+                                title="LinkedIn">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- ================= KONTEN UTAMA ================= -->
+            <main class="flex-1 md:ml-64 p-6 md:p-12 space-y-20">
+
+                <!-- ================= SECTION: ABOUT / HERO ================= -->
+
+                <section id="about" class="pt-4 scroll-mt-24 w-full">
+
+                    <!-- Wrapper Flex 2-Kolom (Teks Kiri, Foto Kanan) -->
+                    <div class="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-10 lg:gap-14">
+
+                        <!-- KOLOM KIRI: Teks Perkenalan -->
+                        <div class="flex-1 space-y-6 text-center lg:text-left w-full">
+
+                            <!-- Badge Available for work -->
+                            <div
+                                class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+                                <span class="relative flex h-2 w-2">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                                </span>
+                                Available for work
+                            </div>
+
+                            <!-- Headline Utama dengan Animasi Mengetik Berulang -->
+                            <div class="space-y-1.5">
+                                <span class="text-indigo-400 text-xs font-bold tracking-widest uppercase block">
+                                    Welcome to my portfolio
+                                </span>
+                                <h2
+                                    class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight min-h-[3.5rem] md:min-h-[4rem]">
+                                    Halo, Saya <span id="typing-text"
+                                        class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent border-r-2 border-indigo-400 pr-1 animate-pulse"></span>
+                                </h2>
+                            </div>
+
+                            <!-- Deskripsi Singkat -->
+                            <p class="text-slate-400 text-base sm:text-lg leading-relaxed font-light">
+                                Saya seorang <span class="text-white font-medium">Web Developer</span> yang berfokus
+                                pada pengembangan aplikasi web yang responsif, cepat, dan ramah pengguna. Dengan
+                                mengombinasikan desain antarmuka yang modern serta arsitektur kode yang bersih, saya
+                                selalu berupaya menghadirkan solusi digital yang efisien, mudah dikembangkan, dan
+                                memberikan pengalaman pengguna terbaik.
+                            </p>
+
+                            <!-- Mini Highlight Bullets -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 pt-1 font-medium">
+                                <div class="flex items-center justify-center lg:justify-start gap-2">
+                                    <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Pengembangan Frontend Responsif</span>
+                                </div>
+                                <div class="flex items-center justify-center lg:justify-start gap-2">
+                                    <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>REST API & Arsitektur Backend</span>
+                                </div>
+                                <div class="flex items-center justify-center lg:justify-start gap-2">
+                                    <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Optimasi Kode & Performa Web</span>
+                                </div>
+                                <div class="flex items-center justify-center lg:justify-start gap-2">
+                                    <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>UI/UX Implementation</span>
+                                </div>
+                            </div>
+
+                            <!-- Tombol Aksi (Call to Action) -->
+                            <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                                <a href="#contact"
+                                    class="group relative inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-indigo-600/25 transition-all duration-200 text-sm overflow-hidden">
+                                    <span class="relative z-10 flex items-center gap-2">
+                                        <span>Hubungi Saya</span>
+                                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition duration-200"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+
+                                <a href="#exprience"
+                                    class="bg-slate-900/80 hover:bg-slate-800/80 text-slate-300 hover:text-white border border-slate-800 hover:border-slate-700 px-6 py-3.5 rounded-xl transition-all duration-200 text-sm font-medium backdrop-blur-sm">
+                                    Lihat Pengalaman
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <!-- KOLOM KANAN: Foto Profil (Didorong ke Ujung Kanan) -->
+                        <div class="relative flex-shrink-0 lg:ml-auto group">
+                            <!-- Glow Ring (Cahaya Pendar di Belakang Foto) -->
+                            <div
+                                class="absolute -inset-1.5 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-75 transition duration-500">
+                            </div>
+
+                            <!-- Frame & Foto Utama -->
+                            <div
+                                class="relative w-52 h-52 sm:w-60 sm:h-60 md:w-64 md:h-64 rounded-[2.2rem] bg-slate-950 overflow-hidden border border-slate-800 shadow-2xl">
+                                <img src="./src/img/profile.jpeg" alt="Foto Profil Faozan"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                                <!-- Vignette Gradasi Halus di Bagian Bawah Gambar -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent">
+                                </div>
+                            </div>
+
+                            <!-- Badge 'Hire Me' Melayang -->
+                            <div
+                                class="absolute -bottom-3 -right-2 bg-slate-950/90 border border-slate-800 text-emerald-400 text-xs font-semibold px-4 py-2 rounded-2xl shadow-xl flex items-center gap-2 backdrop-blur-md">
+                                <span class="relative flex h-2 w-2">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                <span>Ready for Hire</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- STATS GRID (3 Kolom Seimbang) -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-10 border-t border-slate-800/80 mt-12">
+
+                        <!-- Stat 1 -->
+                        <div
+                            class="p-5 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/30 transition duration-300 backdrop-blur-sm">
+                            <span class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">3+</span>
+                            <span class="block text-xs text-slate-400 mt-1.5 uppercase tracking-wider font-medium">Tahun
+                                Pengalaman</span>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div
+                            class="p-5 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/30 transition duration-300 backdrop-blur-sm">
+                            <span class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">20+</span>
+                            <span
+                                class="block text-xs text-slate-400 mt-1.5 uppercase tracking-wider font-medium">Proyek
+                                Selesai</span>
+                        </div>
+
+                        <!-- Stat 3 (Melengkapi Grid 3 Kolom agar Tidak Kosong Sebelah) -->
+                        <div
+                            class="col-span-2 md:col-span-1 p-5 sm:p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/30 transition duration-300 backdrop-blur-sm">
+                            <span
+                                class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent tracking-tight">100%</span>
+                            <span
+                                class="block text-xs text-slate-400 mt-1.5 uppercase tracking-wider font-medium">Komitmen
+                                Kualitas</span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ================= SECTION: EXPERIENCE ================= -->
+                <section id="experience" class="border-t border-slate-800/80 pt-20 scroll-mt-20 w-full">
+
+                    <!-- Judul Section -->
+                    <div class="mb-12">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
+                            Career Path
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white flex items-center gap-3">
+                            <span class="w-8 h-px bg-indigo-500"></span> Experience & Work History
+                        </h2>
+                        <p class="text-slate-400 text-sm md:text-base mt-2 max-w-xl font-light">
+                            Perjalanan profesional dan pengalaman kerja yang telah membentuk keahlian saya di bidang
+                            pengembangan web.
+                        </p>
+                    </div>
+
+                    <!-- Vertical Timeline Container -->
+                    <div class="relative pl-6 sm:pl-8 border-l-2 border-slate-800 space-y-10 my-4">
+
+                        <!-- EXPERIENCE 1 -->
+                        <div class="relative group">
+                            <!-- Dot / Indicator pada Garis Timeline -->
+                            <div
+                                class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-indigo-500 group-hover:bg-indigo-500 group-hover:scale-125 transition-all duration-300">
+                            </div>
+
+                            <!-- Card Pengalaman -->
+                            <div
+                                class="p-6 sm:p-7 rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 backdrop-blur-sm">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition">
+                                            Full-Stack Web Developer</h3>
+                                        <p class="text-xs text-indigo-400 font-medium">PT Teknologi Kreatif • Full-time
+                                        </p>
+                                    </div>
+                                    <!-- Badge Periode -->
+                                    <span
+                                        class="inline-block self-start sm:self-auto text-[11px] font-mono text-slate-400 bg-slate-950 border border-slate-800 px-3 py-1 rounded-full">
+                                        2024 - Sekarang
+                                    </span>
+                                </div>
+
+                                <p class="text-slate-400 text-sm leading-relaxed mb-4 font-light">
+                                    Bertanggung jawab dalam membangun dan memelihara aplikasi web skala enterprise,
+                                    merancang arsitektur database, serta melakukan integrasi RESTful API untuk klien
+                                    perusahaan.
+                                </p>
+
+                                <!-- Poin Tanggung Jawab / Pencapaian -->
+                                <ul class="space-y-1.5 text-xs text-slate-400 list-disc list-inside font-light">
+                                    <li>Mengembangkan fitur e-commerce menggunakan React dan Laravel.</li>
+                                    <li>Meningkatkan kecepatan performa website sebesar 35% melalui optimasi query
+                                        database.</li>
+                                    <li>Bekerja sama dalam tim lintas fungsi menggunakan metodologi Agile/Scrum.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- EXPERIENCE 2 -->
+                        <div class="relative group">
+                            <!-- Dot / Indicator pada Garis Timeline -->
+                            <div
+                                class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-slate-700 group-hover:border-purple-500 group-hover:bg-purple-500 group-hover:scale-125 transition-all duration-300">
+                            </div>
+
+                            <!-- Card Pengalaman -->
+                            <div
+                                class="p-6 sm:p-7 rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition">
+                                            Frontend Developer Internd</h3>
+                                        <p class="text-xs text-purple-400 font-medium">Studio Digital Inovasi • Magang
+                                        </p>
+                                    </div>
+                                    <!-- Badge Periode -->
+                                    <span
+                                        class="inline-block self-start sm:self-auto text-[11px] font-mono text-slate-400 bg-slate-950 border border-slate-800 px-3 py-1 rounded-full">
+                                        2023 - 2024
+                                    </span>
+                                </div>
+
+                                <p class="text-slate-400 text-sm leading-relaxed mb-4 font-light">
+                                    Menerjemahkan desain UI/UX dari Figma menjadi kode HTML, CSS, dan JavaScript yang
+                                    responsif, terstruktur, serta *cross-browser compatible*.
+                                </p>
+
+                                <!-- Poin Tanggung Jawab / Pencapaian -->
+                                <ul class="space-y-1.5 text-xs text-slate-400 list-disc list-inside font-light">
+                                    <li>Membangun 10+ komponen antarmuka yang re-usable dengan Tailwind CSS.</li>
+                                    <li>Melakukan pembenahan bug antarmuka pada tampilan mobile/responsive.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- EXPERIENCE 3 (Freelance / Project-based) -->
+                        <div class="relative group">
+                            <!-- Dot / Indicator pada Garis Timeline -->
+                            <div
+                                class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-slate-700 group-hover:border-emerald-500 group-hover:bg-emerald-500 group-hover:scale-125 transition-all duration-300">
+                            </div>
+
+                            <!-- Card Pengalaman -->
+                            <div
+                                class="p-6 sm:p-7 rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 backdrop-blur-sm">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                                    <div>
+                                        <h3
+                                            class="text-lg font-bold text-white group-hover:text-emerald-400 transition">
+                                            Freelance Web Developer</h3>
+                                        <p class="text-xs text-emerald-400 font-medium">Self-Employed</p>
+                                    </div>
+                                    <!-- Badge Periode -->
+                                    <span
+                                        class="inline-block self-start sm:self-auto text-[11px] font-mono text-slate-400 bg-slate-950 border border-slate-800 px-3 py-1 rounded-full">
+                                        2022 - 2023
+                                    </span>
+                                </div>
+
+                                <p class="text-slate-400 text-sm leading-relaxed font-light">
+                                    Menerima proyek pembuatan *company profile*, landing page, dan sistem informasi
+                                    skala kecil hingga menengah untuk UMKM setempat.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- SECTION: SKILLS -->
+                <section id="skill" class="border-t border-slate-800/80 pt-20 scroll-mt-20 w-full">
+
+                    <!-- Judul Section -->
+                    <div class="mb-10">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
+                            Capabilities
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white flex items-center gap-3">
+                            <span class="w-8 h-px bg-indigo-500"></span> Skills & Tech
+                        </h2>
+                        <p class="text-slate-400 text-sm md:text-base mt-2 max-w-xl font-light">
+                            Perangkat lunak, bahasa pemrograman, dan *framework* yang biasa saya gunakan untuk membangun
+                            produk digital.
+                        </p>
+                    </div>
+
+                    <!-- Grid Kategori Skill (2 Kolom di Desktop) -->
+                    <div class="grid md:grid-cols-2 gap-6">
+
+                        <!-- KATEGORI 1: FRONTEND -->
+                        <div
+                            class="group relative p-6 sm:p-8 rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 backdrop-blur-sm overflow-hidden">
+                            <!-- Glow Effect saat Hover -->
+                            <div
+                                class="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all duration-500">
+                            </div>
+
+                            <div class="flex items-center gap-3 mb-6">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-bold text-lg">
+                                    💻
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Frontend Development</h3>
+                                    <p class="text-xs text-slate-500">Antarmuka & Pengalaman Pengguna</p>
+                                </div>
+                            </div>
+
+                            <!-- List Skill Badge -->
+                            <div class="flex flex-wrap gap-2.5">
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-white transition">HTML</span>
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-white transition">CSS</span>
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-white transition">JavaScript</span>
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-white transition">React</span>
+                            </div>
+                        </div>
+
+                        <!-- KATEGORI 2: BACKEND -->
+                        <div
+                            class="group relative p-6 sm:p-8 rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm overflow-hidden">
+                            <!-- Glow Effect saat Hover -->
+                            <div
+                                class="absolute -top-24 -right-24 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500">
+                            </div>
+
+                            <div class="flex items-center gap-3 mb-6">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-lg">
+                                    ⚙️
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Backend Development</h3>
+                                    <p class="text-xs text-slate-500">Logika & Arsitektur Server</p>
+                                </div>
+                            </div>
+
+                            <!-- List Skill Badge -->
+                            <div class="flex flex-wrap gap-2.5">
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-purple-500/40 hover:text-white transition">PHP</span>
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-purple-500/40 hover:text-white transition">Laravel</span>
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-purple-500/40 hover:text-white transition">Node.js</span>
+                            </div>
+                        </div>
+
+                        <!-- KATEGORI 3: DATABASE -->
+                        <div
+                            class="group relative p-6 sm:p-8 rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 backdrop-blur-sm overflow-hidden">
+                            <!-- Glow Effect saat Hover -->
+                            <div
+                                class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all duration-500">
+                            </div>
+
+                            <div class="flex items-center gap-3 mb-6">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-lg">
+                                    🛢️
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Database Management</h3>
+                                    <p class="text-xs text-slate-500">Penyimpanan & Manajemen Data</p>
+                                </div>
+                            </div>
+
+                            <!-- List Skill Badge -->
+                            <div class="flex flex-wrap gap-2.5">
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-emerald-500/40 hover:text-white transition">MySQL</span>
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-emerald-500/40 hover:text-white transition">PostgreSQL</span>
+                            </div>
+                        </div>
+
+                        <!-- KATEGORI 4: TOOLS & OTHERS -->
+                        <div
+                            class="group relative p-6 sm:p-8 rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-pink-500/50 transition-all duration-300 backdrop-blur-sm overflow-hidden">
+                            <!-- Glow Effect saat Hover -->
+                            <div
+                                class="absolute -top-24 -right-24 w-48 h-48 bg-pink-500/10 rounded-full blur-2xl group-hover:bg-pink-500/20 transition-all duration-500">
+                            </div>
+
+                            <div class="flex items-center gap-3 mb-6">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 font-bold text-lg">
+                                    🛠️
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Tools & Productivity</h3>
+                                    <p class="text-xs text-slate-500">Alur Kerja & Alat Pendukung</p>
+                                </div>
+                            </div>
+
+                            <!-- List Skill Badge -->
+                            <div class="flex flex-wrap gap-2.5">
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-pink-500/40 hover:text-white transition">Git</span>
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-pink-500/40 hover:text-white transition">GitHub</span>
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-pink-500/40 hover:text-white transition">VS
+                                    Code</span>
+                                <span
+                                    class="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 text-xs font-medium hover:border-pink-500/40 hover:text-white transition">Figma</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ================= SECTION: PROJECTS ================= -->
+                <section id="project" class="border-t border-slate-800/80 pt-20 scroll-mt-20 w-full">
+
+                    <!-- Judul Section -->
+                    <div class="mb-10">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
+                            Portfolio
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white flex items-center gap-3">
+                            <span class="w-8 h-px bg-indigo-500"></span> Projects & Case Studies
+                        </h2>
+                        <p class="text-slate-400 text-sm md:text-base mt-2 max-w-xl font-light">
+                            Beberapa proyek web yang telah saya bangun menggunakan kombinasi teknologi modern.
+                        </p>
+                    </div>
+
+                    <!-- Grid Proyek (2 Kolom) -->
+                    <div class="grid md:grid-cols-2 gap-8">
+
+                        <!-- PROYEK 1 -->
+                        <div
+                            class="group relative rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 backdrop-blur-sm overflow-hidden flex flex-col justify-between">
+                            <div>
+                                <!-- Gambar Pratinjau Proyek -->
+                                <div class="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-950">
+                                    <img src="./src/img/project-1.jpg" alt="E-Commerce App"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                                    </div>
+                                </div>
+
+                                <!-- Detail Proyek -->
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition">
+                                            E-Commerce Web App</h3>
+                                        <span
+                                            class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">Completed</span>
+                                    </div>
+                                    <p class="text-slate-400 text-sm leading-relaxed mb-6 font-light">
+                                        Platform toko online dengan fitur keranjang belanja, manajemen produk, sistem
+                                        autentikasi pengguna, dan integrasi payment gateway.
+                                    </p>
+
+                                    <!-- Tech Stack Badges -->
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span
+                                            class="text-[11px] font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-1 rounded-lg">React</span>
+                                        <span
+                                            class="text-[11px] font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-1 rounded-lg">Laravel</span>
+                                        <span
+                                            class="text-[11px] font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-1 rounded-lg">MySQL</span>
+                                        <span
+                                            class="text-[11px] font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-1 rounded-lg">Tailwind
+                                            CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Links / Buttons -->
+                            <div class="px-6 pb-6 pt-2 border-t border-slate-800/50 flex items-center justify-between">
+                                <a href="#" target="_blank"
+                                    class="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white transition">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                    <span>Repository</span>
+                                </a>
+                                <a href="#" target="_blank"
+                                    class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition">
+                                    <span>Live Demo</span>
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- PROYEK 2 -->
+                        <div
+                            class="group relative rounded-3xl bg-slate-900/40 border border-slate-800/80 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm overflow-hidden flex flex-col justify-between">
+                            <div>
+                                <!-- Gambar Pratinjau Proyek -->
+                                <div class="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-950">
+                                    <img src="./src/img/project-2.jpg" alt="Company Profile Web"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent">
+                                    </div>
+                                </div>
+
+                                <!-- Detail Proyek -->
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition">
+                                            Company Profile Website</h3>
+                                        <span
+                                            class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">Completed</span>
+                                    </div>
+                                    <p class="text-slate-400 text-sm leading-relaxed mb-6 font-light">
+                                        Website profil perusahaan responsif dengan desain modern, animasi interaktif,
+                                        halaman blog, dan form kontak terintegrasi.
+                                    </p>
+
+                                    <!-- Tech Stack Badges -->
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span
+                                            class="text-[11px] font-mono text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-lg">PHP</span>
+                                        <span
+                                            class="text-[11px] font-mono text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-lg">JavaScript</span>
+                                        <span
+                                            class="text-[11px] font-mono text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-lg">Tailwind
+                                            CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Links / Buttons -->
+                            <div class="px-6 pb-6 pt-2 border-t border-slate-800/50 flex items-center justify-between">
+                                <a href="#" target="_blank"
+                                    class="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white transition">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                    <span>Repository</span>
+                                </a>
+                                <a href="#" target="_blank"
+                                    class="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-400 hover:text-purple-300 transition">
+                                    <span>Live Demo</span>
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- SECTION: CONTACT ME -->
+                <section id="contact" class="border-t border-slate-800/80 pt-20 pb-16 scroll-mt-20 w-full">
+
+                    <!-- Judul Section -->
+                    <div class="mb-12">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
+                            Contact
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white flex items-center gap-3">
+                            <span class="w-8 h-px bg-indigo-500"></span> Contact Me
+                        </h2>
+                        <p class="text-slate-400 text-sm md:text-base mt-2 max-w-xl font-light">
+                            Punya ide proyek menarik atau ingin berdiskusi seputar peluang kerja sama? Kirimkan pesan
+                            atau hubungi saya langsung.
+                        </p>
+                    </div>
+
+                    <!-- Layout Grid 2 Kolom: Info Kontak & Formulir -->
+                    <div class="grid lg:grid-cols-5 gap-8 items-start">
+
+                        <!-- KOLOM KIRI: Kartu Info Kontak Langsung (2 Kolom Grid Layout) -->
+                        <div class="lg:col-span-2 space-y-4">
+
+                            <!-- Card: Email -->
+                            <a href="mailto:emailanda@gmail.com"
+                                class="group p-5 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 flex items-center gap-4 backdrop-blur-sm">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        class="text-xs text-slate-500 font-medium uppercase tracking-wider block">Email</span>
+                                    <span
+                                        class="text-sm font-semibold text-white group-hover:text-indigo-400 transition">emailanda@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <!-- Card: WhatsApp / Phone -->
+                            <a href="https://wa.me/628123456789" target="_blank"
+                                class="group p-5 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 flex items-center gap-4 backdrop-blur-sm">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition duration-300 flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        class="text-xs text-slate-500 font-medium uppercase tracking-wider block">WhatsApp
+                                        / Phone</span>
+                                    <span
+                                        class="text-sm font-semibold text-white group-hover:text-emerald-400 transition">+62
+                                        812-3456-789</span>
+                                </div>
+                            </a>
+
+                            <!-- Card: Location -->
+                            <div
+                                class="p-5 rounded-2xl bg-slate-900/40 border border-slate-800/80 flex items-center gap-4 backdrop-blur-sm">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span
+                                        class="text-xs text-slate-500 font-medium uppercase tracking-wider block">Lokasi</span>
+                                    <span class="text-sm font-semibold text-white">Tangerang, Indonesia</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- KOLOM KANAN: Form Kontak Interaktif (3 Kolom Grid Layout) -->
+                        <div class="lg:col-span-3 relative group">
+                            <!-- Glow Effect di Belakang Form -->
+                            <div
+                                class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500">
+                            </div>
+
+                            <form
+                                class="relative p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl space-y-5">
+
+                                <!-- Grid Nama & Email (Sejajar di Layar Besar) -->
+                                <div class="grid sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label
+                                            class="block text-xs uppercase font-semibold text-slate-400 tracking-wider mb-2">Nama
+                                            Lengkap</label>
+                                        <input type="text" placeholder="John Doe"
+                                            class="w-full bg-slate-950/70 border border-slate-800 rounded-xl p-3.5 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-xs uppercase font-semibold text-slate-400 tracking-wider mb-2">Email</label>
+                                        <input type="email" placeholder="nama@email.com"
+                                            class="w-full bg-slate-950/70 border border-slate-800 rounded-xl p-3.5 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                                    </div>
+                                </div>
+
+                                <!-- Input Subjek/Topik -->
+                                <div>
+                                    <label
+                                        class="block text-xs uppercase font-semibold text-slate-400 tracking-wider mb-2">Subjek
+                                        Proyek</label>
+                                    <input type="text" placeholder="Pembuatan Website / UI UX Design"
+                                        class="w-full bg-slate-950/70 border border-slate-800 rounded-xl p-3.5 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                                </div>
+
+                                <!-- Input Pesan -->
+                                <div>
+                                    <label
+                                        class="block text-xs uppercase font-semibold text-slate-400 tracking-wider mb-2">Pesan</label>
+                                    <textarea rows="4" placeholder="Ceritakan sedikit tentang proyek atau ide Anda..."
+                                        class="w-full bg-slate-950/70 border border-slate-800 rounded-xl p-3.5 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition"></textarea>
+                                </div>
+
+                                <!-- Tombol Kirim -->
+                                <button type="button"
+                                    class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-600/30 transition duration-200 text-sm flex items-center justify-center gap-2 group/btn">
+                                    <span>Kirim Pesan</span>
+                                    <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </button>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- ================= FOOTER UTAMA ================= -->
+                <footer class="border-t border-slate-800/80 pt-8 pb-12 mt-20 w-full text-slate-500 text-xs">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+
+                        <!-- Informasi Hak Cipta & Pembuatan -->
+                        <div class="text-center sm:text-left space-y-1">
+                            <p class="text-slate-400 font-medium">&copy; 2026 Faozan. All rights reserved.</p>
+                            <p class="text-[11px] text-slate-500">
+                                Didesain & dibangun menggunakan <span class="text-indigo-400">Tailwind CSS</span> &
+                                <span class="text-indigo-400">JavaScript</span>.
+                            </p>
+                        </div>
+
+                        <!-- Tombol Back to Top -->
+                        <a href="#about" id="back-to-top"
+                            class="group inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white transition duration-300">
+                            <span>Kembali ke Atas</span>
+                            <svg class="w-3.5 h-3.5 transform group-hover:-translate-y-1 transition duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                            </svg>
+                        </a>
+
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+
+
+        <script src="./src/js/main.js"></script>
+</body>
+
+</html>
