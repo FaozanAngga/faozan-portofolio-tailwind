@@ -95,52 +95,62 @@ document.getElementById('back-to-top').addEventListener('click', function (e) {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Ambil elemen desktop dan mobile
-  const roleElementDesktop = document.getElementById('typing-role');
-  const roleElementMobile = document.getElementById('typing-role-mobile');
-  
-  // Daftar profesi yang akan berganti-ganti
-  const roles = ["Web Developer", "Frontend Developer", "Backend Developer", "Fullstack Developer"];
-  
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+    // Ambil elemen desktop dan mobile
+    const roleElementDesktop = document.getElementById('typing-role');
+    const roleElementMobile = document.getElementById('typing-role-mobile');
 
-  function typeRoleEffect() {
-    const currentRole = roles[roleIndex];
-    const textToShow = isDeleting 
-      ? currentRole.substring(0, charIndex - 1) 
-      : currentRole.substring(0, charIndex + 1);
+    // Daftar profesi yang akan berganti-ganti
+    const roles = ["Web Developer", "Frontend Developer", "Backend Developer", "Fullstack Developer"];
 
-    // Update teks di kedua elemen (jika ada)
-    if (roleElementDesktop) roleElementDesktop.textContent = textToShow;
-    if (roleElementMobile) roleElementMobile.textContent = textToShow;
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-    if (isDeleting) {
-      charIndex--;
-    } else {
-      charIndex++;
+    function typeRoleEffect() {
+        const currentRole = roles[roleIndex];
+        const textToShow = isDeleting
+            ? currentRole.substring(0, charIndex - 1)
+            : currentRole.substring(0, charIndex + 1);
+
+        // Update teks di kedua elemen (jika ada)
+        if (roleElementDesktop) roleElementDesktop.textContent = textToShow;
+        if (roleElementMobile) roleElementMobile.textContent = textToShow;
+
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+
+        // Kecepatan mengetik (100ms) & menghapus (50ms)
+        let speed = isDeleting ? 50 : 100;
+
+        // Jika kata sudah selesai diketik penuh
+        if (!isDeleting && charIndex === currentRole.length) {
+            speed = 3000; // JEDA 3 DETIK sebelum mulai menghapus
+            isDeleting = true;
+        }
+        // Jika kata sudah selesai dihapus total
+        else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length; // Lanjut ke profesi berikutnya
+            speed = 400; // Jeda sebentar sebelum mengetik kata baru
+        }
+
+        setTimeout(typeRoleEffect, speed);
     }
 
-    // Kecepatan mengetik (100ms) & menghapus (50ms)
-    let speed = isDeleting ? 50 : 100;
-
-    // Jika kata sudah selesai diketik penuh
-    if (!isDeleting && charIndex === currentRole.length) {
-      speed = 3000; // JEDA 3 DETIK sebelum mulai menghapus
-      isDeleting = true;
-    } 
-    // Jika kata sudah selesai dihapus total
-    else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      roleIndex = (roleIndex + 1) % roles.length; // Lanjut ke profesi berikutnya
-      speed = 400; // Jeda sebentar sebelum mengetik kata baru
+    if (roleElementDesktop || roleElementMobile) {
+        typeRoleEffect();
     }
-
-    setTimeout(typeRoleEffect, speed);
-  }
-
-  if (roleElementDesktop || roleElementMobile) {
-    typeRoleEffect();
-  }
 });
+
+tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            }
+        }
+    }
+}
