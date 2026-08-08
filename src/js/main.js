@@ -1,29 +1,40 @@
-// <!-- ================= JAVASCRIPT TOGGLE BURGER NAV ================= -->
+// ================= TOGGLE MENU MOBILE =================
 const menuBtn = document.getElementById('menu-btn');
-const sidebar = document.getElementById('sidebar');
+const mobileMenu = document.getElementById('mobile-menu');
 const burgerIcon = document.getElementById('burger-icon');
 const closeIcon = document.getElementById('close-icon');
-const navLinks = document.querySelectorAll('.nav-link');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-// Toggle menu saat tombol burger diklik
-menuBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('hidden');
-    burgerIcon.classList.toggle('hidden');
-    closeIcon.classList.toggle('hidden');
-});
+function toggleMenu() {
+    const isOpen = mobileMenu.classList.contains('max-h-96');
 
-// Otomatis menutup menu mobile saat salah satu link diklik
-navLinks.forEach(link => {
+    if (isOpen) {
+        mobileMenu.classList.remove('max-h-96', 'opacity-100');
+        mobileMenu.classList.add('max-h-0', 'opacity-0');
+        burgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    } else {
+        mobileMenu.classList.remove('max-h-0', 'opacity-0');
+        mobileMenu.classList.add('max-h-96', 'opacity-100');
+        burgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+    }
+}
+
+if (menuBtn) {
+    menuBtn.addEventListener('click', toggleMenu);
+}
+
+// Menutup menu mobile otomatis saat link diklik
+mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
-        if (window.innerWidth < 768) { // 768px = breakpoint 'md' Tailwind
-            sidebar.classList.add('hidden');
-            burgerIcon.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
+        if (mobileMenu.classList.contains('max-h-96')) {
+            toggleMenu();
         }
     });
 });
 
-// Tambahkan di dalam main.js
+// ================= HIGHLIGHT ACTIVE MENU ON SCROLL =================
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
@@ -31,20 +42,20 @@ window.addEventListener('scroll', () => {
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 150)) {
+        if (window.pageYOffset >= (sectionTop - 150)) {
             current = section.getAttribute('id');
         }
     });
 
     navLinks.forEach(link => {
-        link.classList.remove('bg-indigo-600', 'text-white', 'border-slate-700/50');
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('bg-indigo-600', 'text-white');
+        link.classList.remove('bg-indigo-600/20', 'text-indigo-400', 'border-indigo-500/30');
+        if (current && link.getAttribute('href').includes(current)) {
+            link.classList.add('bg-indigo-600/20', 'text-indigo-400', 'border-indigo-500/30');
         }
     });
 });
 
+// ================= ANIMASI TYPING NAMA =================
 document.addEventListener('DOMContentLoaded', () => {
     const typingElement = document.getElementById('typing-text');
     const name = "Faozan";
@@ -53,28 +64,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDeleting = false;
 
     function typeEffect() {
+        if (!typingElement) return;
+
         if (isDeleting) {
-            // Menghapus karakter satu per satu
             typingElement.textContent = name.substring(0, charIndex - 1);
             charIndex--;
         } else {
-            // Mengetik karakter satu per satu
             typingElement.textContent = name.substring(0, charIndex + 1);
             charIndex++;
         }
 
-        // Kecepatan standar mengetik (120ms) & menghapus (60ms)
         let typingSpeed = isDeleting ? 60 : 120;
 
-        // 1. Jika nama "Faozan" sudah selesai diketik penuh
         if (!isDeleting && charIndex === name.length) {
-            typingSpeed = 5000; // JEDA 5 DETIK sebelum mulai menghapus kembali
+            typingSpeed = 5000;
             isDeleting = true;
-        }
-        // 2. Jika nama sudah selesai dihapus total
-        else if (isDeleting && charIndex === 0) {
+        } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
-            typingSpeed = 500; // Jeda singkat (0.5 detik) sebelum mulai mengetik lagi
+            typingSpeed = 500;
         }
 
         setTimeout(typeEffect, typingSpeed);
@@ -85,21 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.getElementById('back-to-top').addEventListener('click', function (e) {
-    e.preventDefault(); // Mencegah loncatan instan bawaan browser
-
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Membuat scroll meluncur secara halus
-    });
-});
-
+// ================= ANIMASI TYPING PROFESI =================
 document.addEventListener('DOMContentLoaded', () => {
-    // Ambil elemen desktop dan mobile
     const roleElementDesktop = document.getElementById('typing-role');
     const roleElementMobile = document.getElementById('typing-role-mobile');
 
-    // Daftar profesi yang akan berganti-ganti
     const roles = ["Web Developer", "Frontend Developer", "Backend Developer", "Fullstack Developer"];
 
     let roleIndex = 0;
@@ -112,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ? currentRole.substring(0, charIndex - 1)
             : currentRole.substring(0, charIndex + 1);
 
-        // Update teks di kedua elemen (jika ada)
         if (roleElementDesktop) roleElementDesktop.textContent = textToShow;
         if (roleElementMobile) roleElementMobile.textContent = textToShow;
 
@@ -122,19 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
             charIndex++;
         }
 
-        // Kecepatan mengetik (100ms) & menghapus (50ms)
         let speed = isDeleting ? 50 : 100;
 
-        // Jika kata sudah selesai diketik penuh
         if (!isDeleting && charIndex === currentRole.length) {
-            speed = 3000; // JEDA 3 DETIK sebelum mulai menghapus
+            speed = 3000;
             isDeleting = true;
-        }
-        // Jika kata sudah selesai dihapus total
-        else if (isDeleting && charIndex === 0) {
+        } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length; // Lanjut ke profesi berikutnya
-            speed = 400; // Jeda sebentar sebelum mengetik kata baru
+            roleIndex = (roleIndex + 1) % roles.length;
+            speed = 400;
         }
 
         setTimeout(typeRoleEffect, speed);
@@ -145,12 +137,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-tailwind.config = {
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            }
-        }
-    }
+// ================= BACK TO TOP =================
+const backToTopBtn = document.getElementById('back-to-top');
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 }
