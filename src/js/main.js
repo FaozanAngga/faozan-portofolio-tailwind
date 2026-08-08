@@ -1,3 +1,34 @@
+// ================= LIGHT / DARK THEME TOGGLE =================
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+}
+
+// Jalankan inisialisasi tema sebelum event listener
+initTheme();
+
+const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+function toggleTheme() {
+    if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+    } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+if (themeToggleDesktop) themeToggleDesktop.addEventListener('click', toggleTheme);
+if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+
 // ================= TOGGLE MENU MOBILE =================
 const menuBtn = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -25,7 +56,6 @@ if (menuBtn) {
     menuBtn.addEventListener('click', toggleMenu);
 }
 
-// Menutup menu mobile otomatis saat link diklik
 mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
         if (mobileMenu.classList.contains('max-h-96')) {
@@ -48,9 +78,9 @@ window.addEventListener('scroll', () => {
     });
 
     navLinks.forEach(link => {
-        link.classList.remove('bg-indigo-600/20', 'text-indigo-400', 'border-indigo-500/30');
+        link.classList.remove('bg-indigo-500/10', 'dark:bg-indigo-600/20', 'text-indigo-600', 'dark:text-indigo-400', 'border-indigo-500/30');
         if (current && link.getAttribute('href').includes(current)) {
-            link.classList.add('bg-indigo-600/20', 'text-indigo-400', 'border-indigo-500/30');
+            link.classList.add('bg-indigo-500/10', 'dark:bg-indigo-600/20', 'text-indigo-600', 'dark:text-indigo-400', 'border-indigo-500/30');
         }
     });
 });
