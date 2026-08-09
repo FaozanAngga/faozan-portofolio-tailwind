@@ -1,16 +1,14 @@
 // ================= LIGHT / DARK THEME TOGGLE =================
 function initTheme() {
     const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.documentElement.classList.add('dark');
-    } else {
+    if (savedTheme === 'light') {
         document.documentElement.classList.remove('dark');
+    } else {
+        document.documentElement.classList.add('dark');
     }
 }
 
-// Jalankan inisialisasi tema sebelum event listener
 initTheme();
 
 const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
