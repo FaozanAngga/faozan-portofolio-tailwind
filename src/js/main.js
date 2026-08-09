@@ -176,3 +176,41 @@ if (backToTopBtn) {
         });
     });
 }
+
+// Memastikan DOM telah dimuat seluruhnya
+document.addEventListener('DOMContentLoaded', () => {
+    const progressBar = document.getElementById('progress-bar');
+
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            // Menghitung posisi scroll saat ini
+            const windowScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+            // Menghitung total tinggi halaman yang bisa di-scroll
+            const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            // Menghitung persentase scroll
+            const scrolled = (windowScroll / totalHeight) * 100;
+
+            // Memperbarui lebar progress bar
+            progressBar.style.width = `${scrolled}%`;
+        });
+    }
+});
+
+function copyToClipboard(text, element) {
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = element.innerHTML;
+        element.innerHTML = `
+            <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-emerald-500">Tersalin!</span>
+        `;
+        setTimeout(() => {
+            element.innerHTML = originalText;
+        }, 2000);
+    }).catch(err => {
+        console.error('Gagal menyalin text: ', err);
+    });
+}

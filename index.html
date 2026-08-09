@@ -5,17 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Faozan Anggarian</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="./dist/css/output.css">
+    <link href="./dist/css/output.css" rel="stylesheet">
 </head>
 
 <body
     class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+    <div class="fixed top-0 left-0 w-full h-1 z-50 bg-transparent">
+        <div id="progress-bar" class="h-full bg-blue-600 w-0 transition-all duration-150"></div>
+    </div>
 
     <!-- ================= NAVBAR MOBILE (STICKY TOP) ================= -->
     <div
@@ -297,42 +295,6 @@
                             selalu berupaya menghadirkan solusi digital yang efisien, mudah dikembangkan, dan
                             memberikan pengalaman pengguna terbaik.
                         </p>
-
-                        <div
-                            class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 dark:text-slate-300 pt-1 font-medium">
-                            <div class="flex items-center justify-center lg:justify-start gap-2">
-                                <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 flex-shrink-0" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>Pengembangan Frontend Responsif</span>
-                            </div>
-                            <div class="flex items-center justify-center lg:justify-start gap-2">
-                                <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 flex-shrink-0" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>REST API & Arsitektur Backend</span>
-                            </div>
-                            <div class="flex items-center justify-center lg:justify-start gap-2">
-                                <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 flex-shrink-0" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>Optimasi Kode & Performa Web</span>
-                            </div>
-                            <div class="flex items-center justify-center lg:justify-start gap-2">
-                                <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 flex-shrink-0" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>UI/UX Implementation</span>
-                            </div>
-                        </div>
 
                         <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
                             <a href="#contact"
@@ -786,7 +748,8 @@
             <!-- SECTION: CONTACT -->
             <section id="contact"
                 class="border-t border-slate-200 dark:border-slate-800/80 pt-20 pb-16 scroll-mt-20 w-full">
-                <div class="mb-12">
+                <!-- Section Header -->
+                <div class="mb-10">
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
                         Contact
@@ -796,91 +759,169 @@
                         <span class="w-8 h-px bg-indigo-500"></span> Contact Me
                     </h2>
                     <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base mt-2 max-w-xl font-light">
-                        Punya ide proyek menarik atau ingin berdiskusi seputar peluang kerja sama? Kirimkan pesan atau
-                        hubungi saya langsung.
+                        Punya ide proyek menarik, pertanyaan, atau peluang kerja sama? Jangan ragu untuk menghubungi
+                        saya. Saya selalu terbuka untuk berdiskusi!
                     </p>
                 </div>
 
                 <div class="grid lg:grid-cols-5 gap-8 items-start">
+
+                    <!-- INFO KONTAK (EMAIL, WHATSAPP, LOKASI) -->
                     <div class="lg:col-span-2 space-y-4">
-                        <a href="mailto:emailanda@gmail.com"
-                            class="group p-5 rounded-2xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 flex items-center gap-4 shadow-sm dark:shadow-none backdrop-blur-sm">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <div>
-                                <span
-                                    class="text-xs text-slate-500 font-medium uppercase tracking-wider block">Email</span>
-                                <span
-                                    class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">emailanda@gmail.com</span>
-                            </div>
-                        </a>
 
-                        <a href="https://wa.me/628123456789" target="_blank"
-                            class="group p-5 rounded-2xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 flex items-center gap-4 shadow-sm dark:shadow-none backdrop-blur-sm">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition duration-300 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-500 font-medium uppercase tracking-wider block">WhatsApp
-                                    / Phone</span>
-                                <span
-                                    class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">+62
-                                    812-3456-789</span>
-                            </div>
-                        </a>
-
+                        <!-- Email Card -->
                         <div
-                            class="p-5 rounded-2xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 flex items-center gap-4 shadow-sm dark:shadow-none backdrop-blur-sm">
+                            class="group relative rounded-2xl bg-white/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 p-5 shadow-sm hover:shadow-md dark:shadow-none backdrop-blur-xl transition-all duration-300 hover:border-indigo-500/50 overflow-hidden">
                             <div
-                                class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                    </path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
+                                class="absolute -right-10 -bottom-10 w-28 h-28 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all duration-500">
                             </div>
-                            <div>
-                                <span
-                                    class="text-xs text-slate-500 font-medium uppercase tracking-wider block">Lokasi</span>
-                                <span class="text-sm font-semibold text-slate-900 dark:text-white">Tangerang,
-                                    Indonesia</span>
+                            <div class="flex items-start justify-between gap-3">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 flex-shrink-0">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="space-y-0.5">
+                                        <span
+                                            class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">Email
+                                            Address</span>
+                                        <a href="mailto:emailanda@gmail.com"
+                                            class="text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition break-all">
+                                            emailanda@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-xs">
+                                <span class="text-slate-500 dark:text-slate-400 font-medium">Balasan via Email</span>
+                                <button onclick="copyToClipboard('emailanda@gmail.com', this)"
+                                    class="inline-flex items-center gap-1.5 font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition focus:outline-none">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    <span>Salin Email</span>
+                                </button>
                             </div>
                         </div>
+
+                        <!-- WhatsApp Card -->
+                        <div
+                            class="group relative rounded-2xl bg-white/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 p-5 shadow-sm hover:shadow-md dark:shadow-none backdrop-blur-xl transition-all duration-300 hover:border-emerald-500/50 overflow-hidden">
+                            <div
+                                class="absolute -right-10 -bottom-10 w-28 h-28 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all duration-500">
+                            </div>
+                            <div class="flex items-start justify-between gap-3">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition duration-300 flex-shrink-0">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="space-y-0.5">
+                                        <span
+                                            class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">WhatsApp
+                                            / Phone</span>
+                                        <a href="https://wa.me/628123456789" target="_blank"
+                                            class="text-sm font-bold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+                                            +62 812-3456-789
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-xs">
+                                <span
+                                    class="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Fast
+                                    Response
+                                </span>
+                                <a href="https://wa.me/628123456789" target="_blank"
+                                    class="inline-flex items-center gap-1 font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition">
+                                    <span>Chat WhatsApp</span>
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Location Card -->
+                        <div
+                            class="group relative rounded-2xl bg-white/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 p-5 shadow-sm hover:shadow-md dark:shadow-none backdrop-blur-xl transition-all duration-300 hover:border-purple-500/50 overflow-hidden">
+                            <div
+                                class="absolute -right-10 -bottom-10 w-28 h-28 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500">
+                            </div>
+                            <div class="flex items-start justify-between gap-3">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition duration-300 flex-shrink-0">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                            </path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="space-y-0.5">
+                                        <span
+                                            class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">Lokasi
+                                            Utamaku</span>
+                                        <span class="text-sm font-bold text-slate-900 dark:text-white block">Tangerang,
+                                            Indonesia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-xs">
+                                <span class="text-slate-500 dark:text-slate-400 font-medium">Remote / Hybrid
+                                    Ready</span>
+                                <a href="https://maps.google.com/?q=Tangerang,Indonesia" target="_blank"
+                                    class="inline-flex items-center gap-1 font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition">
+                                    <span>Buka Map</span>
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
 
+                    <!-- FORM PESAN -->
                     <div class="lg:col-span-3 relative group">
                         <div
-                            class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500">
+                            class="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500 rounded-3xl blur opacity-15 group-hover:opacity-30 transition duration-500">
                         </div>
 
                         <form
-                            class="relative p-6 sm:p-8 rounded-3xl bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 shadow-md dark:shadow-none backdrop-blur-xl space-y-5">
+                            class="relative p-6 sm:p-8 rounded-3xl bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-xl dark:shadow-none backdrop-blur-2xl space-y-5">
                             <div class="grid sm:grid-cols-2 gap-5">
                                 <div>
                                     <label
                                         class="block text-xs uppercase font-semibold text-slate-500 dark:text-slate-400 tracking-wider mb-2">Nama
                                         Lengkap</label>
-                                    <input type="text" placeholder="John Doe"
-                                        class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                                    <input type="text" placeholder="John Doe" required
+                                        class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition">
                                 </div>
                                 <div>
                                     <label
                                         class="block text-xs uppercase font-semibold text-slate-500 dark:text-slate-400 tracking-wider mb-2">Email</label>
-                                    <input type="email" placeholder="nama@email.com"
-                                        class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                                    <input type="email" placeholder="nama@email.com" required
+                                        class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition">
                                 </div>
                             </div>
 
@@ -888,28 +929,30 @@
                                 <label
                                     class="block text-xs uppercase font-semibold text-slate-500 dark:text-slate-400 tracking-wider mb-2">Subjek
                                     Proyek</label>
-                                <input type="text" placeholder="Pembuatan Website / UI UX Design"
-                                    class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+                                <input type="text" placeholder="Pembuatan Website / Konsultasi Tech" required
+                                    class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition">
                             </div>
 
                             <div>
                                 <label
                                     class="block text-xs uppercase font-semibold text-slate-500 dark:text-slate-400 tracking-wider mb-2">Pesan</label>
                                 <textarea rows="4" placeholder="Ceritakan sedikit tentang proyek atau ide Anda..."
-                                    class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition"></textarea>
+                                    required
+                                    class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition"></textarea>
                             </div>
 
-                            <button type="button"
-                                class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-600/30 transition duration-200 text-sm flex items-center justify-center gap-2 group/btn">
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 transition duration-300 text-sm flex items-center justify-center gap-2 group/btn">
                                 <span>Kirim Pesan</span>
-                                <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition duration-200"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                 </svg>
                             </button>
                         </form>
                     </div>
+
                 </div>
             </section>
 
