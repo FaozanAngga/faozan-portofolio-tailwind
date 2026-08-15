@@ -15,117 +15,111 @@
         <div id="progress-bar" class="h-full bg-blue-600 w-0 transition-all duration-150"></div>
     </div>
 
-    <!-- ================= NAVBAR MOBILE (STICKY TOP) ================= -->
-    <div
-        class="md:hidden bg-slate-100/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800/80 px-5 py-3 flex justify-between items-center sticky top-0 z-50 h-16 transition-colors">
+    <!-- ================= MOBILE TOPBAR ================= -->
+    <header id="mobile-topbar" class="mobile-topbar md:hidden">
+        <div class="mobile-topbar-inner">
+            <a href="#about" class="mobile-brand group" aria-label="Faozan Anggarian - About">
+                <span class="mobile-brand-mark">F</span>
+                <span class="mobile-brand-copy">
+                    <span class="mobile-brand-name">Faozan Anggarian</span>
+                    <span class="mobile-brand-role"><span id="typing-role-mobile"></span></span>
+                </span>
+            </a>
 
-        <!-- Logo / Name Brand -->
-        <a href="#about" class="flex items-center gap-2.5 group">
-            <div
-                class="w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center font-bold text-sm text-indigo-600 dark:text-indigo-400 group-hover:scale-105 transition">
-                F
+            <div class="mobile-topbar-actions">
+                <button id="theme-toggle-mobile" class="mobile-action" type="button" aria-label="Toggle theme"
+                    aria-pressed="false">
+                    <svg id="sun-icon-mobile" class="h-[18px] w-[18px] hidden dark:block" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728 0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
+                    </svg>
+                    <svg id="moon-icon-mobile" class="h-[18px] w-[18px] dark:hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                            d="M20.35 15.35A9 9 0 0 1 8.65 3.65 9 9 0 1 0 20.35 15.35Z" />
+                    </svg>
+                </button>
+
+                <button id="menu-btn" class="mobile-action mobile-menu-trigger" type="button"
+                    aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg id="burger-icon" class="h-[18px] w-[18px]" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 8h14M5 16h14" />
+                    </svg>
+                    <svg id="close-icon" class="h-[18px] w-[18px] hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                            d="m7 7 10 10M17 7 7 17" />
+                    </svg>
+                </button>
             </div>
-            <div class="flex flex-col justify-center">
-                <h1 class="text-base font-extrabold text-slate-900 dark:text-white tracking-tight leading-none">
-                    Faozan Anggarian
-                </h1>
-                <p
-                    class="text-[11px] text-slate-500 dark:text-slate-400 font-medium tracking-wide mt-1 h-3.5 flex items-center">
-                    <span id="typing-role-mobile"
-                        class="border-r-2 border-indigo-500 dark:border-indigo-400 pr-0.5 animate-pulse"></span>
-                </p>
-            </div>
-        </a>
-
-        <div class="flex items-center gap-2">
-            <!-- Tombol Toggle Theme Mobile -->
-            <button id="theme-toggle-mobile" aria-label="Toggle Theme"
-                class="p-2 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl transition duration-200 shadow-sm dark:shadow-none focus:outline-none">
-                <svg id="sun-icon-mobile" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-                    </path>
-                </svg>
-                <svg id="moon-icon-mobile" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
-                    </path>
-                </svg>
-            </button>
-
-            <!-- Tombol Toggle Mobile Menu -->
-            <button id="menu-btn" aria-label="Toggle Menu"
-                class="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-slate-900/60 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 rounded-xl transition duration-200 shadow-sm dark:shadow-none focus:outline-none">
-                <svg id="burger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
-                <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                    </path>
-                </svg>
-            </button>
         </div>
-    </div>
+    </header>
 
-    <!-- Dropdown Mobile Menu -->
-    <div id="mobile-menu"
-        class="md:hidden fixed top-16 left-0 w-full bg-slate-50/95 dark:bg-slate-950/95 backdrop-blur-2xl border-b border-slate-200 dark:border-slate-800/80 z-40 overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
+    <!-- ================= MOBILE NAVIGATION ================= -->
+    <div id="mobile-menu" class="mobile-menu-panel md:hidden" aria-hidden="true">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-heading">
+                <span>Navigation</span>
+                <span class="mobile-menu-index">01 — 05</span>
+            </div>
 
-        <!-- Navigasi Utama -->
-        <nav class="flex flex-col px-6 pt-4 space-y-1">
-            <a href="#about"
-                class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2.5 border-b border-slate-200/80 dark:border-slate-800/50 text-sm font-medium transition-colors">About
-                me</a>
-            <a href="#experience"
-                class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2.5 border-b border-slate-200/80 dark:border-slate-800/50 text-sm font-medium transition-colors">Experience</a>
-            <a href="#skill"
-                class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2.5 border-b border-slate-200/80 dark:border-slate-800/50 text-sm font-medium transition-colors">Skills</a>
-            <a href="#project"
-                class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2.5 border-b border-slate-200/80 dark:border-slate-800/50 text-sm font-medium transition-colors">Projects</a>
-            <a href="#contact"
-                class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2.5 text-sm font-medium transition-colors">Contact
-                me</a>
-        </nav>
-
-        <!-- BAGIAN SOSIAL MEDIA (ELEGAN & MINIMALIS) -->
-        <div
-            class="px-6 pb-5 pt-3 border-t border-slate-200/60 dark:border-slate-800/60 mt-2 flex items-center justify-between">
-            <span
-                class="text-[11px] font-medium tracking-wider text-slate-400 dark:text-slate-500 uppercase">Connect</span>
-
-            <div class="flex items-center space-x-2">
-                <!-- GitHub -->
-                <a href="https://github.com/username" target="_blank" rel="noopener noreferrer"
-                    class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-200/50 dark:hover:bg-slate-900/60 transition-all duration-200"
-                    aria-label="GitHub">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                        <path
-                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                    </svg>
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+                <a href="#about" class="mobile-nav-link">
+                    <span class="mobile-nav-number">01</span>
+                    <span class="mobile-nav-label">About me</span>
+                    <span class="mobile-nav-arrow">↗</span>
                 </a>
-
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer"
-                    class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-200/50 dark:hover:bg-slate-900/60 transition-all duration-200"
-                    aria-label="LinkedIn">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                        <path
-                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
+                <a href="#experience" class="mobile-nav-link">
+                    <span class="mobile-nav-number">02</span>
+                    <span class="mobile-nav-label">Experience</span>
+                    <span class="mobile-nav-arrow">↗</span>
                 </a>
-
-                <!-- Instagram -->
-                <a href="https://instagram.com/username" target="_blank" rel="noopener noreferrer"
-                    class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-200/50 dark:hover:bg-slate-900/60 transition-all duration-200"
-                    aria-label="Instagram">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
+                <a href="#skill" class="mobile-nav-link">
+                    <span class="mobile-nav-number">03</span>
+                    <span class="mobile-nav-label">Skills</span>
+                    <span class="mobile-nav-arrow">↗</span>
                 </a>
+                <a href="#project" class="mobile-nav-link">
+                    <span class="mobile-nav-number">04</span>
+                    <span class="mobile-nav-label">Projects</span>
+                    <span class="mobile-nav-arrow">↗</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link">
+                    <span class="mobile-nav-number">05</span>
+                    <span class="mobile-nav-label">Contact me</span>
+                    <span class="mobile-nav-arrow">↗</span>
+                </a>
+            </nav>
+
+            <div class="mobile-menu-footer">
+                <div>
+                    <span class="mobile-footer-kicker">Let's connect</span>
+                    <span class="mobile-footer-status"><i></i> Available for work</span>
+                </div>
+                <div class="mobile-socials">
+                    <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12Z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5ZM8 19H5V8h3v11ZM6.5 6.5A1.75 1.75 0 1 1 6.5 3a1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.6c0-3.37-4-3.11-4 0V19H9V8h3v1.77c1.4-2.59 7-2.78 7 2.47V19Z" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/username" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 12 16.5 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 12 14.5 2.5 2.5 0 0 0 12 9.5Zm5.25-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -135,120 +129,155 @@
 
         <!-- ================= SIDEBAR DESKTOP ================= -->
         <header id="sidebar"
-            class="hidden md:flex flex-col w-64 bg-slate-100/70 dark:bg-slate-900/60 backdrop-blur-2xl border-r border-slate-200 dark:border-slate-800/80 p-6 justify-between fixed top-0 h-screen z-40 transition-colors">
+            class="desktop-sidebar group/sidebar hidden md:flex fixed left-0 top-0 z-40 h-screen w-[72px] flex-col overflow-hidden border-r border-slate-200/80 bg-slate-50/90 px-3 py-5 backdrop-blur-xl transition-[width,background-color,border-color] duration-300 ease-[cubic-bezier(.22,1,.36,1)] dark:border-slate-800/80 dark:bg-slate-950/90 hover:w-[286px] focus-within:w-[286px]">
 
-            <div>
-                <!-- Brand & Logo -->
-                <div class="mb-10 flex items-center gap-3.5 pb-6 border-b border-slate-200 dark:border-slate-800/80">
-                    <div class="relative group">
-                        <div
-                            class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-300">
-                        </div>
-                        <div
-                            class="relative w-10 h-10 rounded-xl bg-white dark:bg-slate-950 flex items-center justify-center font-black text-lg text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
-                            F
-                        </div>
-                    </div>
-
-                    <div>
-                        <h1 class="text-base font-bold text-slate-900 dark:text-white tracking-tight leading-none">
-                            Faozan Anggarian
-                        </h1>
-                        <p
-                            class="text-[12px] text-slate-500 dark:text-slate-400 font-medium tracking-wide mt-1 h-4 flex items-center">
-                            <span id="typing-role"
-                                class="border-r-2 border-indigo-500 dark:border-indigo-400 pr-0.5 animate-pulse"></span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Navigasi Sidebar -->
-                <nav class="flex flex-col space-y-1.5">
-                    <a href="#about"
-                        class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/40 border border-transparent transition-all duration-200 font-medium text-sm overflow-hidden">
+            <div class="flex min-h-0 flex-1 flex-col">
+                <!-- Brand -->
+                <a href="#about"
+                    class="sidebar-brand group/brand flex min-w-[250px] items-center gap-3 border-b border-slate-200/80 px-1 pb-5 dark:border-slate-800/80">
+                    <span
+                        class="brand-mark relative flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-slate-950 text-lg font-extrabold tracking-[-0.04em] text-white shadow-[0_10px_28px_-12px_rgba(99,102,241,.75)] ring-1 ring-white/10 transition duration-300 dark:bg-white dark:text-slate-950 dark:ring-slate-900/10">
+                        F
+                    </span>
+                    <span
+                        class="sidebar-expand-content min-w-0 opacity-0 translate-x-1 transition-all duration-200 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:translate-x-0 group-focus-within/sidebar:opacity-100">
                         <span
-                            class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
-                        <span class="ml-1">About me</span>
+                            class="block whitespace-nowrap text-[15px] font-extrabold leading-none tracking-[-0.025em] text-slate-950 dark:text-white">Faozan
+                            Anggarian</span>
+                        <span
+                            class="mt-1.5 flex h-4 items-center whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">
+                            <span id="typing-role-sidebar"
+                                class="border-r border-indigo-500 pr-1 dark:border-indigo-400"></span>
+                        </span>
+                    </span>
+                </a>
+
+                <!-- Navigation -->
+                <nav class="mt-7 flex flex-col gap-1.5" aria-label="Primary navigation">
+                    <a href="#about"
+                        class="nav-link group flex h-11 min-w-[250px] items-center gap-3 rounded-xl px-2.5 text-slate-500 transition-all duration-200 hover:bg-slate-200/60 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900/80 dark:hover:text-white">
+                        <span
+                            class="nav-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors group-hover:bg-white group-hover:text-indigo-600 dark:group-hover:bg-slate-800 dark:group-hover:text-indigo-400">
+                            <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M3 11.5 12 4l9 7.5M5.5 10v9.5h13V10M9.5 19.5v-6h5v6" />
+                            </svg>
+                        </span>
+                        <span
+                            class="sidebar-expand-content whitespace-nowrap text-sm font-semibold opacity-0 translate-x-1 transition-all duration-200 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:translate-x-0 group-focus-within/sidebar:opacity-100">About
+                            me</span>
                     </a>
 
                     <a href="#experience"
-                        class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/40 border border-transparent transition-all duration-200 font-medium text-sm overflow-hidden">
+                        class="nav-link group flex h-11 min-w-[250px] items-center gap-3 rounded-xl px-2.5 text-slate-500 transition-all duration-200 hover:bg-slate-200/60 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900/80 dark:hover:text-white">
                         <span
-                            class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
-                        <span class="ml-1">Experience</span>
+                            class="nav-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors group-hover:bg-white group-hover:text-indigo-600 dark:group-hover:bg-slate-800 dark:group-hover:text-indigo-400">
+                            <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7M4.5 7h15v11.5a1.5 1.5 0 0 1-1.5 1.5h-12a1.5 1.5 0 0 1-1.5-1.5V7Zm0 4h15M9 15h6" />
+                            </svg>
+                        </span>
+                        <span
+                            class="sidebar-expand-content whitespace-nowrap text-sm font-semibold opacity-0 translate-x-1 transition-all duration-200 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:translate-x-0 group-focus-within/sidebar:opacity-100">Experience</span>
                     </a>
 
                     <a href="#skill"
-                        class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/40 border border-transparent transition-all duration-200 font-medium text-sm overflow-hidden">
+                        class="nav-link group flex h-11 min-w-[250px] items-center gap-3 rounded-xl px-2.5 text-slate-500 transition-all duration-200 hover:bg-slate-200/60 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900/80 dark:hover:text-white">
                         <span
-                            class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
-                        <span class="ml-1">Skills</span>
+                            class="nav-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors group-hover:bg-white group-hover:text-indigo-600 dark:group-hover:bg-slate-800 dark:group-hover:text-indigo-400">
+                            <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M5 19V9m4 10V5m5 14v-7m5 7V3" />
+                            </svg>
+                        </span>
+                        <span
+                            class="sidebar-expand-content whitespace-nowrap text-sm font-semibold opacity-0 translate-x-1 transition-all duration-200 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:translate-x-0 group-focus-within/sidebar:opacity-100">Skills</span>
                     </a>
 
                     <a href="#project"
-                        class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/40 border border-transparent transition-all duration-200 font-medium text-sm overflow-hidden">
+                        class="nav-link group flex h-11 min-w-[250px] items-center gap-3 rounded-xl px-2.5 text-slate-500 transition-all duration-200 hover:bg-slate-200/60 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900/80 dark:hover:text-white">
                         <span
-                            class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
-                        <span class="ml-1">Projects</span>
+                            class="nav-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors group-hover:bg-white group-hover:text-indigo-600 dark:group-hover:bg-slate-800 dark:group-hover:text-indigo-400">
+                            <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="m8 8-4 4 4 4m8-8 4 4-4 4M14.5 4l-5 16" />
+                            </svg>
+                        </span>
+                        <span
+                            class="sidebar-expand-content whitespace-nowrap text-sm font-semibold opacity-0 translate-x-1 transition-all duration-200 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:translate-x-0 group-focus-within/sidebar:opacity-100">Projects</span>
                     </a>
 
                     <a href="#contact"
-                        class="nav-link group relative flex items-center justify-between px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/40 border border-transparent transition-all duration-200 font-medium text-sm overflow-hidden">
+                        class="nav-link group flex h-11 min-w-[250px] items-center gap-3 rounded-xl px-2.5 text-slate-500 transition-all duration-200 hover:bg-slate-200/60 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900/80 dark:hover:text-white">
                         <span
-                            class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-indigo-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-all duration-200"></span>
-                        <span class="ml-1">Contact me</span>
+                            class="nav-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors group-hover:bg-white group-hover:text-indigo-600 dark:group-hover:bg-slate-800 dark:group-hover:text-indigo-400">
+                            <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M4 6.5h16A1.5 1.5 0 0 1 21.5 8v8A1.5 1.5 0 0 1 20 17.5H4A1.5 1.5 0 0 1 2.5 16V8A1.5 1.5 0 0 1 4 6.5Zm0 0L12 13l8-6.5" />
+                            </svg>
+                        </span>
+                        <span
+                            class="sidebar-expand-content whitespace-nowrap text-sm font-semibold opacity-0 translate-x-1 transition-all duration-200 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:translate-x-0 group-focus-within/sidebar:opacity-100">Contact
+                            me</span>
                     </a>
                 </nav>
             </div>
 
-            <!-- Footer Sidebar & Theme Switcher -->
-            <div class="pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-col gap-4">
-                <button id="theme-toggle-desktop"
-                    class="flex items-center justify-between w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition shadow-sm dark:shadow-none focus:outline-none">
-                    <span class="flex items-center gap-2">
-                        <svg id="sun-icon-desktop" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-                            </path>
+            <!-- Sidebar footer -->
+            <div
+                class="mt-6 flex min-w-[250px] flex-col gap-3 border-t border-slate-200/80 pt-5 dark:border-slate-800/80">
+                <button id="theme-toggle-desktop" aria-label="Toggle theme"
+                    class="group flex h-11 w-full items-center gap-3 rounded-xl px-2.5 text-slate-500 transition hover:bg-slate-200/60 hover:text-slate-950 dark:text-slate-400 dark:hover:bg-slate-900/80 dark:hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50">
+                    <span
+                        class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-900">
+                        <svg id="sun-icon-desktop" class="hidden h-[17px] w-[17px] dark:block" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728 0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
                         </svg>
-                        <svg id="moon-icon-desktop" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
-                            </path>
+                        <svg id="moon-icon-desktop" class="h-[17px] w-[17px] dark:hidden" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                d="M20.35 15.35A9 9 0 1 1 8.65 3.65 7 7 0 0 0 20.35 15.35Z" />
                         </svg>
-                        <span class="dark:hidden">Light Mode</span>
-                        <span class="hidden dark:inline">Dark Mode</span>
                     </span>
                     <span
-                        class="text-[10px] bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md font-mono text-slate-500 dark:text-slate-400">Toggle</span>
+                        class="sidebar-expand-content flex min-w-0 flex-1 items-center justify-between gap-3 whitespace-nowrap text-sm font-semibold opacity-0 translate-x-1 transition-all duration-200 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:translate-x-0 group-focus-within/sidebar:opacity-100">
+                        <span><span class="dark:hidden">Light Mode</span><span class="hidden dark:inline">Dark
+                                Mode</span></span>
+                        <span
+                            class="rounded-md bg-slate-200/70 px-2 py-0.5 font-mono text-[9px] font-medium text-slate-500 dark:bg-slate-800 dark:text-slate-400">Toggle</span>
+                    </span>
                 </button>
 
-                <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
-                    <span>Indonesia (GMT+7)</span>
+                <div
+                    class="sidebar-expand-content flex min-w-0 items-center gap-2 whitespace-nowrap px-2.5 text-[11px] font-medium text-slate-500 opacity-0 translate-x-1 transition-all duration-200 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:translate-x-0 group-focus-within/sidebar:opacity-100 dark:text-slate-400">
+                    <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500"></span>
+                    Indonesia (GMT+7)
                 </div>
 
-                <div class="flex items-center justify-between">
-                    <p class="text-[11px] text-slate-500">&copy; 2026 Faozan Anggarian</p>
-                    <div class="flex space-x-1 text-slate-500 dark:text-slate-400">
-                        <a href="#"
-                            class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
-                            title="GitHub">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <div class="flex min-w-[250px] items-center justify-between px-2.5 pt-1">
+                    <p
+                        class="sidebar-expand-content whitespace-nowrap text-[10px] text-slate-400 opacity-0 translate-x-1 transition-all duration-200 group-hover/sidebar:translate-x-0 group-hover/sidebar:opacity-100 group-focus-within/sidebar:translate-x-0 group-focus-within/sidebar:opacity-100">
+                        © 2026 Faozan Anggarian</p>
+                    <div class="flex items-center gap-1 text-slate-500 dark:text-slate-400">
+                        <a href="https://github.com/username" target="_blank" rel="noopener noreferrer"
+                            class="rounded-lg p-2 transition hover:bg-slate-200 hover:text-indigo-600 dark:hover:bg-slate-900 dark:hover:text-indigo-400"
+                            aria-label="GitHub">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
                         </a>
-                        <a href="#"
-                            class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
-                            title="LinkedIn">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer"
+                            class="rounded-lg p-2 transition hover:bg-slate-200 hover:text-indigo-600 dark:hover:bg-slate-900 dark:hover:text-indigo-400"
+                            aria-label="LinkedIn">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                             </svg>
@@ -259,700 +288,803 @@
         </header>
 
         <!-- ================= KONTEN UTAMA ================= -->
-        <main class="flex-1 md:ml-64 p-6 md:p-12 space-y-20">
+        <main
+            class="flex-1 md:ml-[72px] px-4 sm:px-6 md:px-10 lg:px-14 xl:px-16 py-8 md:py-12 space-y-28 overflow-hidden">
 
-            <!-- SECTION: ABOUT -->
-            <section id="about" class="pt-4 scroll-mt-24 w-full">
-                <div class="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-10 lg:gap-14">
-                    <div class="flex-1 space-y-6 text-center lg:text-left w-full">
+            <!-- SECTION: ABOUT / HERO -->
+            <section id="about" data-reveal="scale"
+                class="relative isolate scroll-mt-24 w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16">
+                <!-- Ambient background: subtle on purpose -->
+                <div aria-hidden="true"
+                    class="pointer-events-none absolute -top-16 right-0 sm:right-10 lg:right-20 -z-10 h-64 w-64 sm:h-80 sm:w-80 rounded-full bg-indigo-500/10 blur-3xl dark:bg-indigo-500/10">
+                </div>
+                <div aria-hidden="true"
+                    class="pointer-events-none absolute top-1/2 -left-32 -z-10 h-56 w-56 rounded-full bg-purple-500/5 blur-3xl">
+                </div>
+
+                <div class="grid items-center gap-12 lg:grid-cols-[1.02fr_.98fr] lg:gap-16 xl:gap-24">
+                    <!-- Hero copy -->
+                    <div class="reveal-child order-2 text-center lg:order-1 lg:text-left">
                         <div
-                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold tracking-wide uppercase">
-                            <span class="relative flex h-2 w-2">
+                            class="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-600 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300">
+                            <span class="relative flex h-2 w-2 shrink-0">
                                 <span
-                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                                    class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70"></span>
+                                <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
                             </span>
                             Available for work
                         </div>
 
-                        <div class="space-y-1.5">
-                            <span
-                                class="text-indigo-600 dark:text-indigo-400 text-xs font-bold tracking-widest uppercase block">
-                                Welcome to my portfolio
-                            </span>
-                            <h2
-                                class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight min-h-[3.5rem] md:min-h-[4rem]">
-                                Halo, Saya <span id="typing-text"
-                                    class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent border-r-2 border-indigo-500 dark:border-indigo-400 pr-1 animate-pulse"></span>
-                            </h2>
-                        </div>
-
-                        <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-light">
-                            Saya seorang <span class="text-slate-900 dark:text-white font-medium">Web Developer</span>
-                            yang berfokus
-                            pada pengembangan aplikasi web yang responsif, cepat, dan ramah pengguna. Dengan
-                            mengombinasikan desain antarmuka yang modern serta arsitektur kode yang bersih, saya
-                            selalu berupaya menghadirkan solusi digital yang efisien, mudah dikembangkan, dan
-                            memberikan pengalaman pengguna terbaik.
+                        <p
+                            class="mb-3 text-[11px] font-bold uppercase tracking-[0.28em] text-indigo-600 dark:text-indigo-400">
+                            Welcome to my portfolio
                         </p>
 
-                        <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <h2
+                            class="max-w-4xl text-[2.85rem] font-bold leading-[0.98] tracking-[-0.06em] text-slate-950 dark:text-white sm:text-6xl md:text-7xl lg:text-[4.5rem] xl:text-[5.1rem]">
+                            Halo, Saya <span id="typing-text"
+                                class="inline border-r-2 border-indigo-500 pr-1 bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 bg-clip-text font-extrabold text-transparent dark:from-indigo-400 dark:via-violet-400 dark:to-purple-400"></span>
+                        </h2>
+
+                        <div class="mt-5 flex items-center justify-center gap-3 lg:justify-start">
+                            <span class="h-px w-8 bg-indigo-500/60"></span>
+                            <p
+                                class="text-base font-semibold tracking-tight sm:text-lg text-slate-800 dark:text-slate-200 sm:text-xl">
+                                <span id="typing-role-hero"
+                                    class="border-r-2 border-indigo-500 pr-1 dark:border-indigo-400"></span>
+                            </p>
+                        </div>
+
+                        <p
+                            class="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-400 sm:text-base sm:leading-8 lg:mx-0">
+                            Saya membangun aplikasi web yang <span
+                                class="font-semibold text-slate-900 dark:text-white">responsif, cepat, dan mudah
+                                digunakan</span> dengan perhatian pada detail visual, performa, dan pengalaman pengguna.
+                        </p>
+
+                        <div
+                            class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                            <a href="#projects"
+                                class="js-magnetic group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-slate-950/10 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100 sm:w-auto">
+                                Lihat Project
+                                <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
                             <a href="#contact"
-                                class="group relative inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-indigo-600/20 transition-all duration-200 text-sm overflow-hidden">
-                                <span class="relative z-10 flex items-center gap-2">
-                                    <span>Hubungi Saya</span>
-                                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition duration-200"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                    </svg>
-                                </span>
-                            </a>
-
-                            <a href="#experience"
-                                class="bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 px-6 py-3.5 rounded-xl transition-all duration-200 text-sm font-medium shadow-sm dark:shadow-none backdrop-blur-sm">
-                                Lihat Pengalaman
+                                class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white/70 px-5 py-3.5 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-white hover:text-slate-950 dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:border-slate-700 dark:hover:bg-slate-900 dark:hover:text-white sm:w-auto">
+                                Hubungi Saya
                             </a>
                         </div>
-                    </div>
 
-                    <div class="relative flex-shrink-0 lg:ml-auto group">
+                        <!-- Compact trust metrics -->
                         <div
-                            class="absolute -inset-1.5 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-75 transition duration-500">
-                        </div>
-
-                        <div
-                            class="relative w-52 h-52 sm:w-60 sm:h-60 md:w-64 md:h-64 rounded-[2.2rem] bg-white dark:bg-slate-950 overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-2xl">
-                            <img src="./src/img/profile.jpeg" alt="Foto Profil Faozan"
-                                class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900/40 dark:from-slate-950/60 via-transparent to-transparent">
+                            class="mt-10 grid grid-cols-3 divide-x divide-slate-200 border-t border-slate-200 pt-6 text-left dark:divide-slate-800 dark:border-slate-800">
+                            <div class="pr-3">
+                                <span
+                                    class="stat-number block text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-3xl"
+                                    data-target="3" data-suffix="+">0+</span>
+                                <span
+                                    class="mt-1 block text-[10px] font-medium uppercase tracking-[0.12em] text-slate-500 sm:text-[11px]">Tahun
+                                    pengalaman</span>
+                            </div>
+                            <div class="px-3">
+                                <span
+                                    class="stat-number block text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-3xl"
+                                    data-target="20" data-suffix="+">0+</span>
+                                <span
+                                    class="mt-1 block text-[10px] font-medium uppercase tracking-[0.12em] text-slate-500 sm:text-[11px]">Project
+                                    selesai</span>
+                            </div>
+                            <div class="pl-3">
+                                <span
+                                    class="stat-number block text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-3xl"
+                                    data-target="100" data-suffix="%">0%</span>
+                                <span
+                                    class="mt-1 block text-[10px] font-medium uppercase tracking-[0.12em] text-slate-500 sm:text-[11px]">Komitmen
+                                    kualitas</span>
                             </div>
                         </div>
+                    </div>
 
-                        <div
-                            class="absolute -bottom-3 -right-2 bg-white/90 dark:bg-slate-950/90 border border-slate-200 dark:border-slate-800 text-emerald-600 dark:text-emerald-400 text-xs font-semibold px-4 py-2 rounded-2xl shadow-lg flex items-center gap-2 backdrop-blur-md">
-                            <span class="relative flex h-2 w-2">
-                                <span
-                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                            </span>
-                            <span>Ready for Hire</span>
+                    <!-- Portrait -->
+                    <div class="reveal-child order-1 flex justify-center lg:order-2 lg:justify-end">
+                        <div class="hero-visual relative w-full max-w-[18rem] sm:max-w-[21rem] lg:max-w-[24rem]">
+                            <div aria-hidden="true"
+                                class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-indigo-500/20 via-violet-500/10 to-transparent blur-2xl">
+                            </div>
+                            <div aria-hidden="true"
+                                class="absolute -right-5 top-10 hidden h-20 w-20 rounded-2xl border border-indigo-500/10 bg-indigo-500/5 sm:block">
+                            </div>
+                            <div aria-hidden="true"
+                                class="absolute -left-5 bottom-14 hidden h-16 w-16 rounded-full border border-purple-500/10 bg-purple-500/5 sm:block">
+                            </div>
+
+                            <div
+                                class="group js-tilt relative overflow-hidden rounded-[2rem] border border-white/80 bg-white p-2 shadow-[0_30px_80px_-28px_rgba(15,23,42,.35)] dark:border-slate-800 dark:bg-slate-900 dark:shadow-[0_30px_80px_-28px_rgba(0,0,0,.65)]">
+                                <div
+                                    class="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-slate-100 dark:bg-slate-950">
+                                    <img src="./src/img/profile.jpeg" alt="Foto profil Faozan Anggarian"
+                                        class="h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.02]" />
+                                    <div aria-hidden="true"
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-white/10 dark:from-slate-950/35 dark:to-transparent">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="absolute -right-2 top-4 rounded-full border border-slate-200/90 bg-white/95 px-3 py-1.5 text-[10px] font-semibold text-emerald-600 shadow-md backdrop-blur dark:border-slate-800 dark:bg-slate-950/95 dark:text-emerald-400 sm:-right-4">
+                                <span class="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                Ready to build
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div
-                    class="grid grid-cols-2 md:grid-cols-3 gap-4 pt-10 border-t border-slate-200 dark:border-slate-800/80 mt-12">
-                    <div
-                        class="p-5 sm:p-6 rounded-2xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-indigo-500/30 transition duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
-                        <span
-                            class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">3+</span>
-                        <span
-                            class="block text-xs text-slate-500 dark:text-slate-400 mt-1.5 uppercase tracking-wider font-medium">Tahun
-                            Pengalaman</span>
-                    </div>
-
-                    <div
-                        class="p-5 sm:p-6 rounded-2xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-indigo-500/30 transition duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
-                        <span
-                            class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">20+</span>
-                        <span
-                            class="block text-xs text-slate-500 dark:text-slate-400 mt-1.5 uppercase tracking-wider font-medium">Proyek
-                            Selesai</span>
-                    </div>
-
-                    <div
-                        class="col-span-2 md:col-span-1 p-5 sm:p-6 rounded-2xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-indigo-500/30 transition duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
-                        <span
-                            class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent tracking-tight">100%</span>
-                        <span
-                            class="block text-xs text-slate-500 dark:text-slate-400 mt-1.5 uppercase tracking-wider font-medium">Komitmen
-                            Kualitas</span>
                     </div>
                 </div>
             </section>
 
             <!-- SECTION: EXPERIENCE -->
-            <section id="experience"
-                class="border-t border-slate-200 dark:border-slate-800/80 pt-20 scroll-mt-20 w-full">
-                <div class="mb-12">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
-                        Career Path
+            <section id="experience" data-reveal="left"
+                class="reveal w-full scroll-mt-20 border-t border-slate-200/80 pt-24 dark:border-slate-800/80">
+                <div class="mb-12 reveal-child max-w-3xl">
+                    <p
+                        class="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-indigo-600 dark:text-indigo-400">
+                        Career Path</p>
+                    <div class="flex items-end gap-4">
+                        <span class="mb-2 h-px w-10 shrink-0 bg-indigo-500"></span>
+                        <h2 class="text-3xl font-bold tracking-[-0.035em] text-slate-950 dark:text-white sm:text-4xl">
+                            Experience &amp; Work History</h2>
                     </div>
-                    <h2
-                        class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-3">
-                        <span class="w-8 h-px bg-indigo-500"></span> Experience & Work History
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base mt-2 max-w-xl font-light">
+                    <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-400 sm:text-base">
                         Perjalanan profesional dan pengalaman kerja yang telah membentuk keahlian saya di bidang
                         pengembangan web.
                     </p>
                 </div>
 
-                <div class="relative pl-6 sm:pl-8 border-l-2 border-slate-200 dark:border-slate-800 space-y-10 my-4">
-                    <div class="relative group">
-                        <div
-                            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-slate-950 border-2 border-indigo-500 group-hover:bg-indigo-500 group-hover:scale-125 transition-all duration-300">
-                        </div>
-                        <div
-                            class="p-6 sm:p-7 rounded-3xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                                <div>
-                                    <h3
-                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
-                                        Full-Stack Web Developer</h3>
-                                    <p class="text-xs text-indigo-600 dark:text-indigo-400 font-medium">PT Teknologi
-                                        Kreatif • Full-time</p>
-                                </div>
-                                <span
-                                    class="inline-block self-start sm:self-auto text-[11px] font-mono text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-3 py-1 rounded-full">
-                                    2024 - Sekarang
-                                </span>
-                            </div>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 font-light">
-                                Bertanggung jawab dalam membangun dan memelihara aplikasi web skala enterprise,
-                                merancang arsitektur database, serta melakukan integrasi RESTful API untuk klien
-                                perusahaan.
-                            </p>
-                            <ul
-                                class="space-y-1.5 text-xs text-slate-600 dark:text-slate-400 list-disc list-inside font-light">
-                                <li>Mengembangkan fitur e-commerce menggunakan React dan Laravel.</li>
-                                <li>Meningkatkan kecepatan performa website sebesar 35% melalui optimasi query database.
-                                </li>
-                                <li>Bekerja sama dalam tim lintas fungsi menggunakan metodologi Agile/Scrum.</li>
-                            </ul>
-                        </div>
+                <div class="relative ml-1 sm:ml-2">
+                    <div
+                        class="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-indigo-500/80 via-slate-300 to-transparent dark:via-slate-700">
                     </div>
-
-                    <div class="relative group">
-                        <div
-                            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-slate-950 border-2 border-slate-300 dark:border-slate-700 group-hover:border-purple-500 group-hover:bg-purple-500 group-hover:scale-125 transition-all duration-300">
-                        </div>
-                        <div
-                            class="p-6 sm:p-7 rounded-3xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-purple-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                                <div>
-                                    <h3
-                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition">
-                                        Frontend Developer Intern</h3>
-                                    <p class="text-xs text-purple-600 dark:text-purple-400 font-medium">Studio Digital
-                                        Inovasi • Magang</p>
+                    <div class="space-y-6">
+                        <article data-reveal-child class="group relative pl-9 sm:pl-12">
+                            <span
+                                class="absolute left-0 top-6 z-10 grid h-4 w-4 place-items-center rounded-full border-4 border-slate-50 bg-indigo-500 shadow-[0_0_0_5px_rgba(99,102,241,.10)] dark:border-slate-950"></span>
+                            <div
+                                class="rounded-2xl border border-slate-200/80 bg-white/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/40 hover:shadow-xl hover:shadow-indigo-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-indigo-500/30 sm:p-7">
+                                <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                                    <div>
+                                        <p
+                                            class="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-indigo-600 dark:text-indigo-400">
+                                            01 · Current Role</p>
+                                        <h3
+                                            class="text-lg font-bold tracking-[-0.02em] text-slate-950 dark:text-white sm:text-xl">
+                                            Full-Stack Web Developer</h3>
+                                        <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">PT
+                                            Teknologi Kreatif <span class="mx-1">•</span> Full-time</p>
+                                    </div>
+                                    <span
+                                        class="inline-flex w-fit items-center rounded-full border border-indigo-500/15 bg-indigo-500/5 px-3 py-1.5 text-[10px] font-semibold tracking-wide text-indigo-600 dark:text-indigo-300">2024
+                                        - Sekarang</span>
                                 </div>
-                                <span
-                                    class="inline-block self-start sm:self-auto text-[11px] font-mono text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-3 py-1 rounded-full">
-                                    2023 - 2024
-                                </span>
+                                <p class="mt-5 text-sm leading-7 text-slate-600 dark:text-slate-400">Bertanggung jawab
+                                    dalam membangun dan memelihara aplikasi web skala enterprise, merancang arsitektur
+                                    database, serta melakukan integrasi RESTful API untuk klien perusahaan.</p>
+                                <ul
+                                    class="mt-5 grid gap-2 text-xs leading-6 text-slate-500 dark:text-slate-400 sm:grid-cols-3">
+                                    <li class="flex gap-2"><span
+                                            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span>Mengembangkan
+                                            fitur e-commerce menggunakan React dan Laravel.</span></li>
+                                    <li class="flex gap-2"><span
+                                            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span>Meningkatkan
+                                            kecepatan performa website sebesar 35% melalui optimasi query
+                                            database.</span></li>
+                                    <li class="flex gap-2"><span
+                                            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500"></span><span>Bekerja
+                                            sama dalam tim lintas fungsi menggunakan metodologi Agile/Scrum.</span></li>
+                                </ul>
                             </div>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 font-light">
-                                Menerjemahkan desain UI/UX dari Figma menjadi kode HTML, CSS, dan JavaScript yang
-                                responsif, terstruktur, serta cross-browser compatible.
-                            </p>
-                            <ul
-                                class="space-y-1.5 text-xs text-slate-600 dark:text-slate-400 list-disc list-inside font-light">
-                                <li>Membangun 10+ komponen antarmuka yang re-usable dengan Tailwind CSS.</li>
-                                <li>Melakukan pembenahan bug antarmuka pada tampilan mobile/responsive.</li>
-                            </ul>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="relative group">
-                        <div
-                            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-slate-950 border-2 border-slate-300 dark:border-slate-700 group-hover:border-emerald-500 group-hover:bg-emerald-500 group-hover:scale-125 transition-all duration-300">
-                        </div>
-                        <div
-                            class="p-6 sm:p-7 rounded-3xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                                <div>
-                                    <h3
-                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">
-                                        Freelance Web Developer</h3>
-                                    <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">Self-Employed
-                                    </p>
+                        <article data-reveal-child class="group relative pl-9 sm:pl-12">
+                            <span
+                                class="absolute left-0 top-6 z-10 grid h-4 w-4 place-items-center rounded-full border-4 border-slate-50 bg-purple-500 shadow-[0_0_0_5px_rgba(168,85,247,.08)] dark:border-slate-950"></span>
+                            <div
+                                class="rounded-2xl border border-slate-200/80 bg-white/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-purple-500/30 sm:p-7">
+                                <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                                    <div>
+                                        <p
+                                            class="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-purple-600 dark:text-purple-400">
+                                            02 · Previous Role</p>
+                                        <h3
+                                            class="text-lg font-bold tracking-[-0.02em] text-slate-950 dark:text-white sm:text-xl">
+                                            Frontend Developer Intern</h3>
+                                        <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">Studio
+                                            Digital Inovasi <span class="mx-1">•</span> Magang</p>
+                                    </div>
+                                    <span
+                                        class="inline-flex w-fit items-center rounded-full border border-purple-500/15 bg-purple-500/5 px-3 py-1.5 text-[10px] font-semibold tracking-wide text-purple-600 dark:text-purple-300">2023
+                                        - 2024</span>
                                 </div>
-                                <span
-                                    class="inline-block self-start sm:self-auto text-[11px] font-mono text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-3 py-1 rounded-full">
-                                    2022 - 2023
-                                </span>
+                                <p class="mt-5 text-sm leading-7 text-slate-600 dark:text-slate-400">Menerjemahkan
+                                    desain UI/UX dari Figma menjadi kode HTML, CSS, dan JavaScript yang responsif,
+                                    terstruktur, serta cross-browser compatible.</p>
+                                <ul
+                                    class="mt-5 grid gap-2 text-xs leading-6 text-slate-500 dark:text-slate-400 sm:grid-cols-2">
+                                    <li class="flex gap-2"><span
+                                            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-500"></span><span>Membangun
+                                            10+ komponen antarmuka yang re-usable dengan Tailwind CSS.</span></li>
+                                    <li class="flex gap-2"><span
+                                            class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-500"></span><span>Melakukan
+                                            pembenahan bug antarmuka pada tampilan mobile/responsive.</span></li>
+                                </ul>
                             </div>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed font-light">
-                                Menerima proyek pembuatan company profile, landing page, dan sistem informasi skala
-                                kecil hingga menengah untuk UMKM setempat.
-                            </p>
-                        </div>
+                        </article>
+
+                        <article data-reveal-child class="group relative pl-9 sm:pl-12">
+                            <span
+                                class="absolute left-0 top-6 z-10 grid h-4 w-4 place-items-center rounded-full border-4 border-slate-50 bg-emerald-500 shadow-[0_0_0_5px_rgba(16,185,129,.08)] dark:border-slate-950"></span>
+                            <div
+                                class="rounded-2xl border border-slate-200/80 bg-white/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-emerald-500/30 sm:p-7">
+                                <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                                    <div>
+                                        <p
+                                            class="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">
+                                            03 · Freelance</p>
+                                        <h3
+                                            class="text-lg font-bold tracking-[-0.02em] text-slate-950 dark:text-white sm:text-xl">
+                                            Freelance Web Developer</h3>
+                                        <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+                                            Self-Employed</p>
+                                    </div>
+                                    <span
+                                        class="inline-flex w-fit items-center rounded-full border border-emerald-500/15 bg-emerald-500/5 px-3 py-1.5 text-[10px] font-semibold tracking-wide text-emerald-600 dark:text-emerald-300">2022
+                                        - 2023</span>
+                                </div>
+                                <p class="mt-5 text-sm leading-7 text-slate-600 dark:text-slate-400">Menerima proyek
+                                    pembuatan company profile, landing page, dan sistem informasi skala kecil hingga
+                                    menengah untuk UMKM setempat.</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
 
             <!-- SECTION: SKILLS -->
-            <section id="skill" class="border-t border-slate-200 dark:border-slate-800/80 pt-20 scroll-mt-20 w-full">
-                <div class="mb-10">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
-                        Capabilities
+            <section id="skill" data-reveal="right"
+                class="reveal w-full scroll-mt-20 border-t border-slate-200/80 pt-24 dark:border-slate-800/80">
+                <div class="mb-12 reveal-child max-w-3xl">
+                    <p
+                        class="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-indigo-600 dark:text-indigo-400">
+                        Capabilities</p>
+                    <div class="flex items-end gap-4">
+                        <span class="mb-2 h-px w-10 shrink-0 bg-indigo-500"></span>
+                        <h2 class="text-3xl font-bold tracking-[-0.035em] text-slate-950 dark:text-white sm:text-4xl">
+                            Skills &amp; Tech</h2>
                     </div>
-                    <h2
-                        class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-3">
-                        <span class="w-8 h-px bg-indigo-500"></span> Skills & Tech
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base mt-2 max-w-xl font-light">
+                    <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-400 sm:text-base">
                         Perangkat lunak, bahasa pemrograman, dan framework yang biasa saya gunakan untuk membangun
-                        produk digital.
-                    </p>
+                        produk digital.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div
-                        class="group relative p-6 sm:p-8 rounded-3xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm overflow-hidden">
-                        <div
-                            class="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all duration-500">
-                        </div>
-                        <div class="flex items-center gap-3 mb-6">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-lg">
-                                💻
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <article data-reveal-child
+                        class="group rounded-2xl border border-slate-200/80 bg-white/70 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/35 hover:shadow-xl hover:shadow-indigo-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-indigo-500/25 sm:p-6">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-center gap-3"><span
+                                    class="grid h-10 w-10 place-items-center rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400"><svg
+                                        class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="M4 5h16v14H4zM8 9l2 2-2 2m4 0h4" />
+                                    </svg></span>
+                                <div>
+                                    <h3 class="text-base font-bold text-slate-950 dark:text-white">Frontend Development
+                                    </h3>
+                                    <p class="mt-0.5 text-xs text-slate-500">Antarmuka &amp; Pengalaman Pengguna</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Frontend Development</h3>
-                                <p class="text-xs text-slate-500">Antarmuka & Pengalaman Pengguna</p>
-                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-indigo-500/70">01</span>
                         </div>
-                        <div class="flex flex-wrap gap-2.5">
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-indigo-600 dark:hover:text-white transition">HTML</span>
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-indigo-600 dark:hover:text-white transition">CSS</span>
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-indigo-600 dark:hover:text-white transition">JavaScript</span>
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-indigo-500/40 hover:text-indigo-600 dark:hover:text-white transition">React</span>
-                        </div>
-                    </div>
+                        <div class="mt-6 flex flex-wrap gap-2"><span class="skill-chip">HTML</span><span
+                                class="skill-chip">CSS</span><span class="skill-chip">JavaScript</span><span
+                                class="skill-chip">React</span></div>
+                    </article>
 
-                    <div
-                        class="group relative p-6 sm:p-8 rounded-3xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-purple-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm overflow-hidden">
-                        <div
-                            class="absolute -top-24 -right-24 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500">
+                    <article data-reveal-child
+                        class="group rounded-2xl border border-slate-200/80 bg-white/70 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/35 hover:shadow-xl hover:shadow-purple-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-purple-500/25 sm:p-6">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-center gap-3"><span
+                                    class="grid h-10 w-10 place-items-center rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400"><svg
+                                        class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="M12 3v4m0 10v4M4 12H2m20 0h-2M5.6 5.6 4.2 4.2m15.6 15.6-1.4-1.4m0-12.8 1.4-1.4M5.6 18.4 4.2 19.8M8 12a4 4 0 108 0 4 4 0 00-8 0z" />
+                                    </svg></span>
+                                <div>
+                                    <h3 class="text-base font-bold text-slate-950 dark:text-white">Backend Development
+                                    </h3>
+                                    <p class="mt-0.5 text-xs text-slate-500">Logika &amp; Arsitektur Server</p>
+                                </div>
+                            </div><span
+                                class="text-[10px] font-bold uppercase tracking-widest text-purple-500/70">02</span>
                         </div>
-                        <div class="flex items-center gap-3 mb-6">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-lg">
-                                ⚙️
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Backend Development</h3>
-                                <p class="text-xs text-slate-500">Logika & Arsitektur Server</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2.5">
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-purple-500/40 hover:text-purple-600 dark:hover:text-white transition">PHP</span>
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-purple-500/40 hover:text-purple-600 dark:hover:text-white transition">Laravel</span>
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-purple-500/40 hover:text-purple-600 dark:hover:text-white transition">Node.js</span>
-                        </div>
-                    </div>
+                        <div class="mt-6 flex flex-wrap gap-2"><span class="skill-chip">PHP</span><span
+                                class="skill-chip">Laravel</span><span class="skill-chip">Node.js</span></div>
+                    </article>
 
-                    <div
-                        class="group relative p-6 sm:p-8 rounded-3xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm overflow-hidden">
-                        <div
-                            class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all duration-500">
+                    <article data-reveal-child
+                        class="group rounded-2xl border border-slate-200/80 bg-white/70 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/35 hover:shadow-xl hover:shadow-emerald-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-emerald-500/25 sm:p-6">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-center gap-3"><span
+                                    class="grid h-10 w-10 place-items-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"><svg
+                                        class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg></span>
+                                <div>
+                                    <h3 class="text-base font-bold text-slate-950 dark:text-white">Database Management
+                                    </h3>
+                                    <p class="mt-0.5 text-xs text-slate-500">Penyimpanan &amp; Manajemen Data</p>
+                                </div>
+                            </div><span
+                                class="text-[10px] font-bold uppercase tracking-widest text-emerald-500/70">03</span>
                         </div>
-                        <div class="flex items-center gap-3 mb-6">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-lg">
-                                🛢️
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Database Management</h3>
-                                <p class="text-xs text-slate-500">Penyimpanan & Manajemen Data</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2.5">
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-emerald-500/40 hover:text-emerald-600 dark:hover:text-white transition">MySQL</span>
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-emerald-500/40 hover:text-emerald-600 dark:hover:text-white transition">PostgreSQL</span>
-                        </div>
-                    </div>
+                        <div class="mt-6 flex flex-wrap gap-2"><span class="skill-chip">MySQL</span><span
+                                class="skill-chip">PostgreSQL</span></div>
+                    </article>
 
-                    <div
-                        class="group relative p-6 sm:p-8 rounded-3xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-pink-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm overflow-hidden">
-                        <div
-                            class="absolute -top-24 -right-24 w-48 h-48 bg-pink-500/10 rounded-full blur-2xl group-hover:bg-pink-500/20 transition-all duration-500">
+                    <article data-reveal-child
+                        class="group rounded-2xl border border-slate-200/80 bg-white/70 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/35 hover:shadow-xl hover:shadow-pink-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-pink-500/25 sm:p-6">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex items-center gap-3"><span
+                                    class="grid h-10 w-10 place-items-center rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400"><svg
+                                        class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="M12 3v18M3 12h18" />
+                                    </svg></span>
+                                <div>
+                                    <h3 class="text-base font-bold text-slate-950 dark:text-white">Tools &amp;
+                                        Productivity</h3>
+                                    <p class="mt-0.5 text-xs text-slate-500">Alur Kerja &amp; Alat Pendukung</p>
+                                </div>
+                            </div><span
+                                class="text-[10px] font-bold uppercase tracking-widest text-pink-500/70">04</span>
                         </div>
-                        <div class="flex items-center gap-3 mb-6">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-600 dark:text-pink-400 font-bold text-lg">
-                                🛠️
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Tools & Productivity</h3>
-                                <p class="text-xs text-slate-500">Alur Kerja & Alat Pendukung</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-2.5">
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-pink-500/40 hover:text-pink-600 dark:hover:text-white transition">Git</span>
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-pink-500/40 hover:text-pink-600 dark:hover:text-white transition">GitHub</span>
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-pink-500/40 hover:text-pink-600 dark:hover:text-white transition">VS
-                                Code</span>
-                            <span
-                                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium hover:border-pink-500/40 hover:text-pink-600 dark:hover:text-white transition">Figma</span>
-                        </div>
-                    </div>
+                        <div class="mt-6 flex flex-wrap gap-2"><span class="skill-chip">Git</span><span
+                                class="skill-chip">GitHub</span><span class="skill-chip">VS Code</span><span
+                                class="skill-chip">Figma</span></div>
+                    </article>
                 </div>
             </section>
 
             <!-- SECTION: PROJECTS -->
-            <section id="project" class="border-t border-slate-200 dark:border-slate-800/80 pt-20 scroll-mt-20 w-full">
-                <div class="mb-10">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
-                        Portfolio
+            <section id="project" data-reveal="scale"
+                class="reveal border-t border-slate-200 dark:border-slate-800/80 pt-20 scroll-mt-20 w-full">
+                <div
+                    class="mb-8 flex flex-col sm:flex-row reveal-child reveal-child sm:items-end sm:justify-between gap-5">
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
+                            Portfolio
+                        </div>
+                        <h2
+                            class="text-3xl md:text-4xl font-bold tracking-[-0.025em] text-slate-900 dark:text-white flex items-center gap-3">
+                            <span class="w-8 h-px bg-indigo-500"></span> Projects & Case Studies
+                        </h2>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm md:text-base mt-3 max-w-2xl leading-7 font-light">
+                            Beberapa proyek web yang telah saya bangun menggunakan kombinasi teknologi modern.
+                        </p>
                     </div>
-                    <h2
-                        class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-3">
-                        <span class="w-8 h-px bg-indigo-500"></span> Projects & Case Studies
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base mt-2 max-w-xl font-light">
-                        Beberapa proyek web yang telah saya bangun menggunakan kombinasi teknologi modern.
-                    </p>
+
+                    <div class="flex items-center gap-2 self-start sm:self-auto">
+                        <button id="projects-prev" type="button" aria-label="Project sebelumnya"
+                            class="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/40 transition disabled:opacity-30 disabled:cursor-not-allowed">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button id="projects-next" type="button" aria-label="Project berikutnya"
+                            class="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/40 transition disabled:opacity-30 disabled:cursor-not-allowed">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div
-                        class="group relative rounded-3xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm overflow-hidden flex flex-col justify-between">
-                        <div>
-                            <div class="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-950">
-                                <img src="./src/img/project-1.jpg" alt="E-Commerce App"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" />
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-slate-100/80 dark:from-slate-900 via-transparent to-transparent">
-                                </div>
-                            </div>
+                <div id="projects-carousel" class="relative overflow-hidden -mx-1 px-1 sm:-mx-2 sm:px-2 touch-pan-y">
+                    <div id="projects-track"
+                        class="flex -mx-2 transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] will-change-transform">
 
-                            <div class="p-6">
-                                <div class="flex items-center justify-between mb-2">
+                        <!-- PROJECT CARD TEMPLATE: duplikasi article ini jika ingin menambah project -->
+                        <article data-reveal-child
+                            class="project-slide shrink-0 basis-full md:basis-1/2 xl:basis-1/3 px-2">
+                            <div
+                                class="group h-full flex flex-col overflow-hidden rounded-2xl bg-white/75 js-tilt dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
+                                <div class="relative h-52 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950">
+                                    <img src="./src/img/project-1.jpg" alt="E-Commerce Web App" loading="lazy"
+                                        class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute top-4 right-4 text-[11px] font-semibold text-emerald-600 dark:text-emerald-300 bg-emerald-500/10 backdrop-blur-md border border-emerald-500/20 px-2.5 py-1 rounded-full">Completed</span>
+                                </div>
+                                <div class="p-6 flex-1 flex flex-col">
+                                    <p
+                                        class="text-[10px] uppercase tracking-[0.18em] text-indigo-600 dark:text-indigo-400 font-bold mb-2">
+                                        01 / Web App</p>
                                     <h3
-                                        class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
                                         E-Commerce Web App</h3>
-                                    <span
-                                        class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">Completed</span>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mt-3 font-light">
+                                        Platform toko online dengan fitur keranjang belanja, manajemen produk,
+                                        autentikasi pengguna, dan integrasi payment gateway.</p>
+                                    <div class="flex flex-wrap gap-2 mt-5">
+                                        <span
+                                            class="text-[11px] font-mono text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 px-2.5 py-1 rounded-lg">React</span>
+                                        <span
+                                            class="text-[11px] font-mono text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 px-2.5 py-1 rounded-lg">Laravel</span>
+                                        <span
+                                            class="text-[11px] font-mono text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 px-2.5 py-1 rounded-lg">MySQL</span>
+                                        <span
+                                            class="text-[11px] font-mono text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 px-2.5 py-1 rounded-lg">Tailwind</span>
+                                    </div>
                                 </div>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 font-light">
-                                    Platform toko online dengan fitur keranjang belanja, manajemen produk, sistem
-                                    autentikasi pengguna, dan integrasi payment gateway.
-                                </p>
-
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    <span
-                                        class="text-[11px] font-mono text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 px-2.5 py-1 rounded-lg">React</span>
-                                    <span
-                                        class="text-[11px] font-mono text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 px-2.5 py-1 rounded-lg">Laravel</span>
-                                    <span
-                                        class="text-[11px] font-mono text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 px-2.5 py-1 rounded-lg">MySQL</span>
-                                    <span
-                                        class="text-[11px] font-mono text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 px-2.5 py-1 rounded-lg">Tailwind
-                                        CSS</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="px-6 pb-6 pt-2 border-t border-slate-200 dark:border-slate-800/50 flex items-center justify-between">
-                            <a href="#" target="_blank"
-                                class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                                </svg>
-                                <span>Repository</span>
-                            </a>
-                            <a href="#" target="_blank"
-                                class="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 transition">
-                                <span>Live Demo</span>
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                    </path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div
-                        class="group relative rounded-3xl bg-white/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-purple-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm overflow-hidden flex flex-col justify-between">
-                        <div>
-                            <div class="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-950">
-                                <img src="./src/img/project-2.jpg" alt="Company Profile Web"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100" />
                                 <div
-                                    class="absolute inset-0 bg-gradient-to-t from-slate-100/80 dark:from-slate-900 via-transparent to-transparent">
+                                    class="px-6 py-4 border-t border-slate-200 dark:border-slate-800/70 flex items-center justify-between">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Repository</a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 transition">Live
+                                        Demo ↗</a>
                                 </div>
                             </div>
+                        </article>
 
-                            <div class="p-6">
-                                <div class="flex items-center justify-between mb-2">
+                        <article data-reveal-child
+                            class="project-slide shrink-0 basis-full md:basis-1/2 xl:basis-1/3 px-2">
+                            <div
+                                class="group h-full flex flex-col overflow-hidden rounded-2xl bg-white/75 js-tilt dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-purple-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
+                                <div class="relative h-52 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950">
+                                    <img src="./src/img/project-2.jpg" alt="Company Profile Website" loading="lazy"
+                                        class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute top-4 right-4 text-[11px] font-semibold text-emerald-600 dark:text-emerald-300 bg-emerald-500/10 backdrop-blur-md border border-emerald-500/20 px-2.5 py-1 rounded-full">Completed</span>
+                                </div>
+                                <div class="p-6 flex-1 flex flex-col">
+                                    <p
+                                        class="text-[10px] uppercase tracking-[0.18em] text-purple-600 dark:text-purple-400 font-bold mb-2">
+                                        02 / Company Profile</p>
                                     <h3
-                                        class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition">
+                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition">
                                         Company Profile Website</h3>
-                                    <span
-                                        class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">Completed</span>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mt-3 font-light">
+                                        Website profil perusahaan responsif dengan desain modern, animasi interaktif,
+                                        halaman blog, dan form kontak terintegrasi.</p>
+                                    <div class="flex flex-wrap gap-2 mt-5">
+                                        <span
+                                            class="text-[11px] font-mono text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 px-2.5 py-1 rounded-lg">PHP</span>
+                                        <span
+                                            class="text-[11px] font-mono text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 px-2.5 py-1 rounded-lg">JavaScript</span>
+                                        <span
+                                            class="text-[11px] font-mono text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 px-2.5 py-1 rounded-lg">Tailwind</span>
+                                    </div>
                                 </div>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 font-light">
-                                    Website profil perusahaan responsif dengan desain modern, animasi interaktif,
-                                    halaman blog, dan form kontak terintegrasi.
-                                </p>
-
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    <span
-                                        class="text-[11px] font-mono text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 px-2.5 py-1 rounded-lg">PHP</span>
-                                    <span
-                                        class="text-[11px] font-mono text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 px-2.5 py-1 rounded-lg">JavaScript</span>
-                                    <span
-                                        class="text-[11px] font-mono text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20 px-2.5 py-1 rounded-lg">Tailwind
-                                        CSS</span>
+                                <div
+                                    class="px-6 py-4 border-t border-slate-200 dark:border-slate-800/70 flex items-center justify-between">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Repository</a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-500 transition">Live
+                                        Demo ↗</a>
                                 </div>
                             </div>
-                        </div>
+                        </article>
 
-                        <div
-                            class="px-6 pb-6 pt-2 border-t border-slate-200 dark:border-slate-800/50 flex items-center justify-between">
-                            <a href="#" target="_blank"
-                                class="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                                </svg>
-                                <span>Repository</span>
-                            </a>
-                            <a href="#" target="_blank"
-                                class="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-500 transition">
-                                <span>Live Demo</span>
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                    </path>
-                                </svg>
-                            </a>
-                        </div>
+                        <article data-reveal-child
+                            class="project-slide shrink-0 basis-full md:basis-1/2 xl:basis-1/3 px-2">
+                            <div
+                                class="group h-full flex flex-col overflow-hidden rounded-2xl bg-white/75 js-tilt dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-sky-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
+                                <div class="relative h-52 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950">
+                                    <img src="./src/img/project-3.jpg" alt="Management Dashboard" loading="lazy"
+                                        class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute top-4 right-4 text-[11px] font-semibold text-sky-600 dark:text-sky-300 bg-sky-500/10 backdrop-blur-md border border-sky-500/20 px-2.5 py-1 rounded-full">In
+                                        Progress</span>
+                                </div>
+                                <div class="p-6 flex-1 flex flex-col">
+                                    <p
+                                        class="text-[10px] uppercase tracking-[0.18em] text-sky-600 dark:text-sky-400 font-bold mb-2">
+                                        03 / Dashboard</p>
+                                    <h3
+                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition">
+                                        Management Dashboard</h3>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mt-3 font-light">
+                                        Dashboard administrasi untuk monitoring data, statistik, aktivitas pengguna, dan
+                                        pengelolaan operasional secara real-time.</p>
+                                    <div class="flex flex-wrap gap-2 mt-5">
+                                        <span
+                                            class="text-[11px] font-mono text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-500/10 border border-sky-200 dark:border-sky-500/20 px-2.5 py-1 rounded-lg">Laravel</span>
+                                        <span
+                                            class="text-[11px] font-mono text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-500/10 border border-sky-200 dark:border-sky-500/20 px-2.5 py-1 rounded-lg">Alpine.js</span>
+                                        <span
+                                            class="text-[11px] font-mono text-sky-700 dark:text-sky-300 bg-sky-50 dark:bg-sky-500/10 border border-sky-200 dark:border-sky-500/20 px-2.5 py-1 rounded-lg">MySQL</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-t border-slate-200 dark:border-slate-800/70 flex items-center justify-between">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Repository</a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-500 transition">Live
+                                        Demo ↗</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article data-reveal-child
+                            class="project-slide shrink-0 basis-full md:basis-1/2 xl:basis-1/3 px-2">
+                            <div
+                                class="group h-full flex flex-col overflow-hidden rounded-2xl bg-white/75 js-tilt dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
+                                <div class="relative h-52 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950">
+                                    <img src="./src/img/project-4.jpg" alt="School Information System" loading="lazy"
+                                        class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute top-4 right-4 text-[11px] font-semibold text-emerald-600 dark:text-emerald-300 bg-emerald-500/10 backdrop-blur-md border border-emerald-500/20 px-2.5 py-1 rounded-full">Completed</span>
+                                </div>
+                                <div class="p-6 flex-1 flex flex-col">
+                                    <p
+                                        class="text-[10px] uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400 font-bold mb-2">
+                                        04 / Information System</p>
+                                    <h3
+                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">
+                                        School Information System</h3>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mt-3 font-light">
+                                        Sistem informasi sekolah untuk mengelola data siswa, guru, jadwal, pengumuman,
+                                        dan laporan administrasi.</p>
+                                    <div class="flex flex-wrap gap-2 mt-5">
+                                        <span
+                                            class="text-[11px] font-mono text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 px-2.5 py-1 rounded-lg">PHP</span>
+                                        <span
+                                            class="text-[11px] font-mono text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 px-2.5 py-1 rounded-lg">Laravel</span>
+                                        <span
+                                            class="text-[11px] font-mono text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 px-2.5 py-1 rounded-lg">MySQL</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-t border-slate-200 dark:border-slate-800/70 flex items-center justify-between">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Repository</a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 transition">Live
+                                        Demo ↗</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article data-reveal-child
+                            class="project-slide shrink-0 basis-full md:basis-1/2 xl:basis-1/3 px-2">
+                            <div
+                                class="group h-full flex flex-col overflow-hidden rounded-2xl bg-white/75 js-tilt dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-pink-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
+                                <div class="relative h-52 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950">
+                                    <img src="./src/img/project-5.jpg" alt="Booking and Reservation App" loading="lazy"
+                                        class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute top-4 right-4 text-[11px] font-semibold text-pink-600 dark:text-pink-300 bg-pink-500/10 backdrop-blur-md border border-pink-500/20 px-2.5 py-1 rounded-full">Completed</span>
+                                </div>
+                                <div class="p-6 flex-1 flex flex-col">
+                                    <p
+                                        class="text-[10px] uppercase tracking-[0.18em] text-pink-600 dark:text-pink-400 font-bold mb-2">
+                                        05 / Booking</p>
+                                    <h3
+                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-400 transition">
+                                        Booking & Reservation App</h3>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mt-3 font-light">
+                                        Aplikasi reservasi dengan kalender ketersediaan, pengelolaan booking,
+                                        notifikasi, dan halaman admin responsif.</p>
+                                    <div class="flex flex-wrap gap-2 mt-5">
+                                        <span
+                                            class="text-[11px] font-mono text-pink-700 dark:text-pink-300 bg-pink-50 dark:bg-pink-500/10 border border-pink-200 dark:border-pink-500/20 px-2.5 py-1 rounded-lg">Next.js</span>
+                                        <span
+                                            class="text-[11px] font-mono text-pink-700 dark:text-pink-300 bg-pink-50 dark:bg-pink-500/10 border border-pink-200 dark:border-pink-500/20 px-2.5 py-1 rounded-lg">Node.js</span>
+                                        <span
+                                            class="text-[11px] font-mono text-pink-700 dark:text-pink-300 bg-pink-50 dark:bg-pink-500/10 border border-pink-200 dark:border-pink-500/20 px-2.5 py-1 rounded-lg">PostgreSQL</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-t border-slate-200 dark:border-slate-800/70 flex items-center justify-between">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Repository</a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-pink-600 dark:text-pink-400 hover:text-pink-500 transition">Live
+                                        Demo ↗</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article data-reveal-child
+                            class="project-slide shrink-0 basis-full md:basis-1/2 xl:basis-1/3 px-2">
+                            <div
+                                class="group h-full flex flex-col overflow-hidden rounded-2xl bg-white/75 js-tilt dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 hover:border-amber-500/50 transition-all duration-300 shadow-sm dark:shadow-none backdrop-blur-sm">
+                                <div class="relative h-52 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-950">
+                                    <img src="./src/img/project-6.jpg" alt="Personal Finance App" loading="lazy"
+                                        class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent">
+                                    </div>
+                                    <span
+                                        class="absolute top-4 right-4 text-[11px] font-semibold text-amber-600 dark:text-amber-300 bg-amber-500/10 backdrop-blur-md border border-amber-500/20 px-2.5 py-1 rounded-full">Prototype</span>
+                                </div>
+                                <div class="p-6 flex-1 flex flex-col">
+                                    <p
+                                        class="text-[10px] uppercase tracking-[0.18em] text-amber-600 dark:text-amber-400 font-bold mb-2">
+                                        06 / Productivity</p>
+                                    <h3
+                                        class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition">
+                                        Personal Finance App</h3>
+                                    <p
+                                        class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mt-3 font-light">
+                                        Aplikasi pencatatan keuangan pribadi dengan ringkasan pemasukan, pengeluaran,
+                                        target tabungan, dan visualisasi data.</p>
+                                    <div class="flex flex-wrap gap-2 mt-5">
+                                        <span
+                                            class="text-[11px] font-mono text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 px-2.5 py-1 rounded-lg">Vue</span>
+                                        <span
+                                            class="text-[11px] font-mono text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 px-2.5 py-1 rounded-lg">Laravel</span>
+                                        <span
+                                            class="text-[11px] font-mono text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 px-2.5 py-1 rounded-lg">MySQL</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="px-6 py-4 border-t border-slate-200 dark:border-slate-800/70 flex items-center justify-between">
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Repository</a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer"
+                                        class="text-xs font-semibold text-amber-600 dark:text-amber-400 hover:text-amber-500 transition">Live
+                                        Demo ↗</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex items-center justify-between gap-4">
+                    <div id="projects-dots" class="flex items-center gap-2" aria-label="Project carousel pagination">
+                    </div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400"><span id="projects-counter">01</span> / 04
                     </div>
                 </div>
             </section>
 
             <!-- SECTION: CONTACT -->
-            <section id="contact"
-                class="border-t border-slate-200 dark:border-slate-800/80 pt-20 pb-16 scroll-mt-20 w-full">
-                <!-- Section Header -->
-                <div class="mb-10">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3">
-                        Contact
+            <section id="contact" data-reveal="up"
+                class="reveal w-full scroll-mt-20 border-t border-slate-200/80 pb-16 pt-24 dark:border-slate-800/80">
+                <div class="mb-12 reveal-child max-w-3xl">
+                    <p
+                        class="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-indigo-600 dark:text-indigo-400">
+                        Let's Connect</p>
+                    <div class="flex items-end gap-4"><span class="mb-2 h-px w-10 shrink-0 bg-indigo-500"></span>
+                        <h2 class="text-3xl font-bold tracking-[-0.035em] text-slate-950 dark:text-white sm:text-4xl">
+                            Contact Me</h2>
                     </div>
-                    <h2
-                        class="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-3">
-                        <span class="w-8 h-px bg-indigo-500"></span> Contact Me
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base mt-2 max-w-xl font-light">
-                        Punya ide proyek menarik, pertanyaan, atau peluang kerja sama? Jangan ragu untuk menghubungi
-                        saya. Saya selalu terbuka untuk berdiskusi!
-                    </p>
+                    <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-400 sm:text-base">Punya
+                        ide proyek menarik, pertanyaan, atau peluang kerja sama? Jangan ragu untuk menghubungi saya.
+                        Saya selalu terbuka untuk berdiskusi!</p>
                 </div>
 
-                <div class="grid lg:grid-cols-5 gap-8 items-start">
+                <div class="grid gap-5 lg:grid-cols-[.85fr_1.15fr] lg:gap-8">
+                    <div class="space-y-3">
+                        <a data-reveal-child href="mailto:emailanda@gmail.com"
+                            class="group flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/70 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-500/35 hover:shadow-lg hover:shadow-indigo-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-indigo-500/25 sm:p-5">
+                            <span
+                                class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400"><svg
+                                    class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                        d="M3 6.5A2.5 2.5 0 015.5 4h13A2.5 2.5 0 0121 6.5v11a2.5 2.5 0 01-2.5 2.5h-13A2.5 2.5 0 013 17.5v-11zM4 6l7.1 5.2a1.5 1.5 0 001.8 0L20 6" />
+                                </svg></span>
+                            <span class="min-w-0"><span
+                                    class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Email</span><span
+                                    class="mt-1 block truncate text-sm font-semibold text-slate-900 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">emailanda@gmail.com</span></span>
+                            <svg class="ml-auto h-4 w-4 shrink-0 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-indigo-500"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M5 12h14m-6-6 6 6-6 6" />
+                            </svg>
+                        </a>
 
-                    <!-- INFO KONTAK (EMAIL, WHATSAPP, LOKASI) -->
-                    <div class="lg:col-span-2 space-y-4">
+                        <a data-reveal-child href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer"
+                            class="group flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/70 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-500/35 hover:shadow-lg hover:shadow-emerald-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-emerald-500/25 sm:p-5">
+                            <span
+                                class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"><svg
+                                    class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                        d="M7 4h3l1.4 3.5-1.8 1.4a12 12 0 005.5 5.5l1.4-1.8L20 14v3a2 2 0 01-2 2C10.3 19 5 13.7 5 6a2 2 0 012-2z" />
+                                </svg></span>
+                            <span><span
+                                    class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">WhatsApp
+                                    / Phone</span><span
+                                    class="mt-1 block text-sm font-semibold text-slate-900 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">+62
+                                    812-3456-789</span></span>
+                            <span
+                                class="ml-auto inline-flex items-center gap-1.5 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400"><span
+                                    class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Fast response</span>
+                        </a>
 
-                        <!-- Email Card -->
-                        <div
-                            class="group relative rounded-2xl bg-white/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 p-5 shadow-sm hover:shadow-md dark:shadow-none backdrop-blur-xl transition-all duration-300 hover:border-indigo-500/50 overflow-hidden">
-                            <div
-                                class="absolute -right-10 -bottom-10 w-28 h-28 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all duration-500">
-                            </div>
-                            <div class="flex items-start justify-between gap-3">
-                                <div class="flex items-center gap-4">
-                                    <div
-                                        class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 flex-shrink-0">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <div class="space-y-0.5">
-                                        <span
-                                            class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">Email
-                                            Address</span>
-                                        <a href="mailto:emailanda@gmail.com"
-                                            class="text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition break-all">
-                                            emailanda@gmail.com
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-xs">
-                                <span class="text-slate-500 dark:text-slate-400 font-medium">Balasan via Email</span>
-                                <button onclick="copyToClipboard('emailanda@gmail.com', this)"
-                                    class="inline-flex items-center gap-1.5 font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition focus:outline-none">
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
-                                        </path>
-                                    </svg>
-                                    <span>Salin Email</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- WhatsApp Card -->
-                        <div
-                            class="group relative rounded-2xl bg-white/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 p-5 shadow-sm hover:shadow-md dark:shadow-none backdrop-blur-xl transition-all duration-300 hover:border-emerald-500/50 overflow-hidden">
-                            <div
-                                class="absolute -right-10 -bottom-10 w-28 h-28 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all duration-500">
-                            </div>
-                            <div class="flex items-start justify-between gap-3">
-                                <div class="flex items-center gap-4">
-                                    <div
-                                        class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition duration-300 flex-shrink-0">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <div class="space-y-0.5">
-                                        <span
-                                            class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">WhatsApp
-                                            / Phone</span>
-                                        <a href="https://wa.me/628123456789" target="_blank"
-                                            class="text-sm font-bold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition">
-                                            +62 812-3456-789
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-xs">
-                                <span
-                                    class="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Fast
-                                    Response
-                                </span>
-                                <a href="https://wa.me/628123456789" target="_blank"
-                                    class="inline-flex items-center gap-1 font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition">
-                                    <span>Chat WhatsApp</span>
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Location Card -->
-                        <div
-                            class="group relative rounded-2xl bg-white/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 p-5 shadow-sm hover:shadow-md dark:shadow-none backdrop-blur-xl transition-all duration-300 hover:border-purple-500/50 overflow-hidden">
-                            <div
-                                class="absolute -right-10 -bottom-10 w-28 h-28 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500">
-                            </div>
-                            <div class="flex items-start justify-between gap-3">
-                                <div class="flex items-center gap-4">
-                                    <div
-                                        class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition duration-300 flex-shrink-0">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                            </path>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="space-y-0.5">
-                                        <span
-                                            class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">Lokasi
-                                            Utamaku</span>
-                                        <span class="text-sm font-bold text-slate-900 dark:text-white block">Tangerang,
-                                            Indonesia</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between text-xs">
-                                <span class="text-slate-500 dark:text-slate-400 font-medium">Remote / Hybrid
-                                    Ready</span>
-                                <a href="https://maps.google.com/?q=Tangerang,Indonesia" target="_blank"
-                                    class="inline-flex items-center gap-1 font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition">
-                                    <span>Buka Map</span>
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                        </path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-
+                        <a data-reveal-child href="https://maps.google.com/?q=Tangerang,Indonesia" target="_blank"
+                            rel="noopener noreferrer"
+                            class="group flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/70 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-purple-500/35 hover:shadow-lg hover:shadow-purple-500/5 dark:border-slate-800/80 dark:bg-slate-900/45 dark:hover:border-purple-500/25 sm:p-5">
+                            <span
+                                class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400"><svg
+                                    class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                        d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" />
+                                    <circle cx="12" cy="9" r="2.2" />
+                                </svg></span>
+                            <span><span
+                                    class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">Lokasi
+                                    Utamaku</span><span
+                                    class="mt-1 block text-sm font-semibold text-slate-900 dark:text-white">Tangerang,
+                                    Indonesia</span></span>
+                            <span class="ml-auto text-xs font-semibold text-purple-600 dark:text-purple-400">Remote /
+                                Hybrid</span>
+                        </a>
                     </div>
 
-                    <!-- FORM PESAN -->
-                    <div class="lg:col-span-3 relative group">
-                        <div
-                            class="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500 rounded-3xl blur opacity-15 group-hover:opacity-30 transition duration-500">
+                    <form data-reveal-child
+                        class="rounded-2xl border border-slate-200/80 bg-white/80 p-5 shadow-sm dark:border-slate-800/80 dark:bg-slate-900/50 sm:p-7">
+                        <div class="mb-6">
+                            <p class="text-sm font-bold text-slate-950 dark:text-white">Kirim pesan</p>
+                            <p class="mt-1 text-xs leading-5 text-slate-500">Ceritakan kebutuhan atau ide proyek Anda.
+                            </p>
                         </div>
-
-                        <form
-                            class="relative p-6 sm:p-8 rounded-3xl bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-xl dark:shadow-none backdrop-blur-2xl space-y-5">
-                            <div class="grid sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label
-                                        class="block text-xs uppercase font-semibold text-slate-500 dark:text-slate-400 tracking-wider mb-2">Nama
-                                        Lengkap</label>
-                                    <input type="text" placeholder="John Doe" required
-                                        class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition">
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-xs uppercase font-semibold text-slate-500 dark:text-slate-400 tracking-wider mb-2">Email</label>
-                                    <input type="email" placeholder="nama@email.com" required
-                                        class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label
-                                    class="block text-xs uppercase font-semibold text-slate-500 dark:text-slate-400 tracking-wider mb-2">Subjek
-                                    Proyek</label>
-                                <input type="text" placeholder="Pembuatan Website / Konsultasi Tech" required
-                                    class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition">
-                            </div>
-
-                            <div>
-                                <label
-                                    class="block text-xs uppercase font-semibold text-slate-500 dark:text-slate-400 tracking-wider mb-2">Pesan</label>
-                                <textarea rows="4" placeholder="Ceritakan sedikit tentang proyek atau ide Anda..."
-                                    required
-                                    class="w-full bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition"></textarea>
-                            </div>
-
-                            <button type="submit"
-                                class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 transition duration-300 text-sm flex items-center justify-center gap-2 group/btn">
-                                <span>Kirim Pesan</span>
-                                <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition duration-200"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
-
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <label class="block"><span
+                                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">Nama
+                                    Lengkap</span><input type="text" placeholder="John Doe" required
+                                    class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-500/10 dark:border-slate-800 dark:bg-slate-950/60 dark:text-white dark:focus:bg-slate-950"></label>
+                            <label class="block"><span
+                                    class="mb-2 block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">Email</span><input
+                                    type="email" placeholder="nama@email.com" required
+                                    class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-500/10 dark:border-slate-800 dark:bg-slate-950/60 dark:text-white dark:focus:bg-slate-950"></label>
+                        </div>
+                        <label class="mt-4 block"><span
+                                class="mb-2 block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">Subjek
+                                Proyek</span><input type="text" placeholder="Pembuatan Website / Konsultasi Tech"
+                                required
+                                class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-500/10 dark:border-slate-800 dark:bg-slate-950/60 dark:text-white dark:focus:bg-slate-950"></label>
+                        <label class="mt-4 block"><span
+                                class="mb-2 block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">Pesan</span><textarea
+                                rows="5" placeholder="Ceritakan sedikit tentang proyek atau ide Anda..." required
+                                class="w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-500/10 dark:border-slate-800 dark:bg-slate-950/60 dark:text-white dark:focus:bg-slate-950"></textarea></label>
+                        <button type="submit"
+                            class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-indigo-600 hover:shadow-lg hover:shadow-indigo-600/20 dark:bg-white dark:text-slate-950 dark:hover:bg-indigo-400"><span>Kirim
+                                Pesan</span><svg
+                                class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M5 12h14m-6-6 6 6-6 6" />
+                            </svg></button>
+                    </form>
                 </div>
             </section>
 
@@ -965,8 +1097,7 @@
                             reserved.</p>
                         <p class="text-[11px] text-slate-500">
                             Didesain & dibangun menggunakan <span class="text-indigo-600 dark:text-indigo-400">Tailwind
-                                CSS</span> &
-                            <span class="text-indigo-600 dark:text-indigo-400">JavaScript</span>.
+                                CSS</span> & <span class="text-indigo-600 dark:text-indigo-400">JavaScript</span>.
                         </p>
                     </div>
 
