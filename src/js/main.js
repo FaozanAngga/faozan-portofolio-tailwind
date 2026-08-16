@@ -174,15 +174,6 @@ const App = (() => {
         },
 
         init() {
-            // Nama Hero dibuat looping: mengetik -> pause -> menghapus -> mengetik lagi.
-            // Dengan satu string saja, animasinya tetap terasa tenang tanpa mengganti nama.
-            this.type($('#typing-text'), ['Faozan'], {
-                typingSpeed: 115,
-                deletingSpeed: 70,
-                pause: 2200,
-                gap: 450
-            });
-
             const roles = ['Web Developer', 'Frontend Developer', 'Backend Developer', 'Fullstack Developer'];
             const sidebar = $('#typing-role-sidebar');
             const hero = $('#typing-role-hero');
@@ -327,18 +318,22 @@ const App = (() => {
 
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    if (!entry.isIntersecting) return;
                     const element = entry.target;
-                    element.classList.add('is-visible', 'active');
+                    const children = $$('.reveal-child, [data-reveal-child]', element);
 
-                    if (element.querySelector('.stat-number')) Counters.run();
+                    if (entry.isIntersecting) {
+                        element.classList.add('is-visible', 'active');
 
-                    $$('.reveal-child, [data-reveal-child]', element).forEach((child, index) => {
-                        child.style.setProperty('--reveal-delay', `${Math.min(index * 80, 480)}ms`);
-                        child.classList.add('is-visible');
-                    });
+                        if (element.querySelector('.stat-number')) Counters.run();
 
-                    observer.unobserve(element);
+                        children.forEach((child, index) => {
+                            child.style.setProperty('--reveal-delay', `${Math.min(index * 80, 480)}ms`);
+                            child.classList.add('is-visible');
+                        });
+                    } else {
+                        element.classList.remove('is-visible', 'active');
+                        children.forEach(child => child.classList.remove('is-visible'));
+                    }
                 });
             }, { threshold: 0.12, rootMargin: '0px 0px -50px' });
 
@@ -463,7 +458,7 @@ const App = (() => {
 
             if (prev) prev.disabled = this.state.index === 0;
             if (next) next.disabled = this.state.index >= this.maxIndex();
-            if (counter) counter.textContent = String(this.state.index + 1).padStart(2, '0');
+            if (counter) counter.textContent = `${String(this.state.index + 1).padStart(2, '0')} / ${String(this.elements.slides.length).padStart(2, '0')}`;
 
             if (dots) {
                 [...dots.children].forEach((dot, i) => dot.classList.toggle('active', i === this.state.index));
@@ -537,8 +532,54 @@ const App = (() => {
         }
     };
 
+    /* ---------------------------------------------------------
+       Profile lightbox
+       --------------------------------------------------------- */
+    const ProfileModal = {
+        init() {
+            const modal = $('#profile-modal');
+            if (!modal) return;
+
+            const triggers = $$('.profile-trigger, .mobile-profile-trigger');
+            const closeButtons = $$('[data-profile-close]', modal);
+            if (!triggers.length) return;
+
+            const open = () => {
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('overflow-hidden');
+                modal.querySelector('.profile-modal-close')?.focus();
+            };
+
+            const close = () => {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('overflow-hidden');
+            };
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', event => {
+                    event.preventDefault();
+                    open();
+                });
+                trigger.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        open();
+                    }
+                });
+            });
+
+            closeButtons.forEach(button => button.addEventListener('click', close));
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && modal.classList.contains('is-open')) close();
+            });
+        }
+    };
+
     function init() {
         Theme.init();
+        ProfileModal.init();
         Theme.bind();
         DesktopSidebar.init();
         MobileNav.init();
@@ -554,5 +595,7 @@ const App = (() => {
 
     return { init };
 })();
+
+
 
 document.addEventListener('DOMContentLoaded', App.init);
