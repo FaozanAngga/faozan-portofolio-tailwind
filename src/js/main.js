@@ -279,28 +279,46 @@ const App = (() => {
     /* ---------------------------------------------------------
        Counters
        --------------------------------------------------------- */
-    const Counters = {
-        run() {
-            $$('.stat-number').forEach(counter => {
-                if (counter.dataset.animated === 'true') return;
-                counter.dataset.animated = 'true';
+const Counters = {
+    run() {
+        $$('.stat-number').forEach((counter, index) => {
+            if (counter.dataset.animated === 'true') return;
 
-                const target = Number(counter.dataset.target) || 0;
-                const suffix = counter.dataset.suffix || '';
-                const duration = 1100;
-                const start = performance.now();
+            counter.dataset.animated = 'true';
 
-                const frame = now => {
-                    const progress = Math.min((now - start) / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    counter.textContent = `${Math.round(target * eased)}${suffix}`;
-                    if (progress < 1) requestAnimationFrame(frame);
-                };
+            const target = Number(counter.dataset.target) || 0;
+            const suffix = counter.dataset.suffix || '';
+            const duration = 2200 + (index * 250);
+            const start = performance.now();
 
-                requestAnimationFrame(frame);
+            counter.style.opacity = '0';
+            counter.style.transform = 'translateY(8px)';
+
+            requestAnimationFrame(() => {
+                counter.style.transition =
+                    'opacity 500ms ease, transform 500ms cubic-bezier(0.22, 1, 0.36, 1)';
+                counter.style.opacity = '1';
+                counter.style.transform = 'translateY(0)';
             });
-        }
-    };
+
+            const frame = now => {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+
+                counter.textContent =
+                    `${Math.round(target * eased)}${suffix}`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(frame);
+                } else {
+                    counter.textContent = `${target}${suffix}`;
+                }
+            };
+
+            requestAnimationFrame(frame);
+        });
+    }
+};
 
     /* ---------------------------------------------------------
        Reveal + staggered section animation
