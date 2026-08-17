@@ -1121,3 +1121,33 @@
   box-shadow: 0 8px 26px -14px rgba(0, 0, 0, .85),
     0 0 0 3px rgba(129, 140, 248, .07);
 }
+
+.availability-text {
+  background: linear-gradient(90deg,
+      #cbd5e1 0%,
+      #cbd5e1 35%,
+      #a5b4fc 50%,
+      #c4b5fd 65%,
+      #cbd5e1 80%,
+      #cbd5e1 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: availability-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes availability-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  50% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
